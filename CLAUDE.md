@@ -74,5 +74,5 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
   - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
-  - 모바일 이미지: `hero-phoenix-mo.png` 내용이 Rhea였음 → 임시로 Rhea 모바일(`hero-rhea-mo.webp`)로 사용, Phoenix 모바일은 PC 이미지 사용 중. 사용자가 올바른 파일 다시 올리기로 함
+  - 모바일 이미지: `hero-phoenix-mo.png` 내용이 Rhea였음 → 임시로 Rhea 모바일(`hero-rhea-mo.webp`)로 사용, Phoenix 모바일은 PC 이미지 사용 중. → 사용자가 올바른 원본(`hero-phoenix-mo.png`=Phoenix, `hero-rhea-mo.png`=Rhea)을 `img/`에 다시 올림. `img/web/` webp 변환·사이트 적용은 아직 안 함
   - Hero 아래 섹션(About Us, Rhea, Phoenix, Contact Us)은 아직 없음 — 구성은 사용자와 상의 후 제작
