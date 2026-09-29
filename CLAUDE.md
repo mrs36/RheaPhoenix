@@ -39,8 +39,10 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 
 ## 파일 구조
 
-- `index.html` — 사이트 전체. CSS·JS·로고(SVG)·이미지(webp data URI)가 모두 한 파일 안에 들어 있다.
-  - 이미지 base64 문자열이 매우 길므로, 수정할 때는 해당 부분을 건드리지 말고 텍스트/CSS/HTML 구조만 찾아서 고친다.
+- `index.html` — 사이트 전체. CSS·JS·로고(SVG)가 한 파일 안에 들어 있다. 히어로 제품 이미지는 `img/web/` 파일을 링크한다.
+- `img/` — 사용자가 올린 원본 이미지 (PNG, 투명 배경). 파일명 규칙: `hero-{rhea|phoenix|rhea-phoenix}-{pc|mo}.png`
+- `img/web/` — 원본을 투명 여백 잘라내고 webp로 변환한 사이트용 이미지. 원본을 바꾸면 다시 변환해서 교체한다.
+  - PC/모바일은 `<picture>`로 1023px 이하에서 `-mo` 이미지 사용
 - `.claude/skills/figma-export/SKILL.md` — 디자인 화면을 Figma 파일로 내보내는 규칙(스킬). Figma로 보낼 때는 이 스킬을 따른다.
 
 ## 현재 구성
@@ -66,10 +68,11 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: header + hero 영역, GitHub Pages 배포
 - 완료: 히어로 전체 화면형(100vh) 적용
 - 완료: 콘텐츠 너비 레이아웃 적용 — 헤더 1792px, 히어로 1440px
+- 완료: 히어로 제품 이미지 교체 (사용자 제공 img/ → img/web/ webp)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
   - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
-  - 제품 이미지 교체 검토 — 추천 크기: PC 단독 2000×1600 안팎(투명 PNG), 함께 2560×1440 / 모바일 단독 1080×900 안팎
+  - 모바일 이미지: `hero-phoenix-mo.png` 내용이 Rhea였음 → 임시로 Rhea 모바일(`hero-rhea-mo.webp`)로 사용, Phoenix 모바일은 PC 이미지 사용 중. 사용자가 올바른 파일 다시 올리기로 함
   - Hero 아래 섹션(About Us, Rhea, Phoenix, Contact Us)은 아직 없음 — 구성은 사용자와 상의 후 제작
