@@ -68,11 +68,10 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: header + hero 영역, GitHub Pages 배포
 - 완료: 히어로 전체 화면형(100vh) 적용
 - 완료: 콘텐츠 너비 레이아웃 적용 — 헤더 1792px, 히어로 1440px
-- 완료: 히어로 제품 이미지 교체 (사용자 제공 img/ → img/web/ webp)
+- 완료: 히어로 제품 이미지 교체 (사용자 제공 img/ → img/web/ webp, PC 3장 + 모바일 3장)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
   - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
-  - 모바일 이미지: `hero-phoenix-mo.png` 내용이 Rhea였음 → 임시로 Rhea 모바일(`hero-rhea-mo.webp`)로 사용, Phoenix 모바일은 PC 이미지 사용 중. → 사용자가 올바른 원본(`hero-phoenix-mo.png`=Phoenix, `hero-rhea-mo.png`=Rhea)을 `img/`에 다시 올림. `img/web/` webp 변환·사이트 적용은 아직 안 함
   - Hero 아래 섹션(About Us, Rhea, Phoenix, Contact Us)은 아직 없음 — 구성은 사용자와 상의 후 제작
