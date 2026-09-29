@@ -18,6 +18,7 @@
     --header-h:100px;
     --wrap:1792px;   /* 콘텐츠 최대 너비 (1920 화면 기준 좌우 64px 여백) */
     --side:64px;     /* 최소 좌우 여백 */
+    --hero-wrap:1440px; /* 히어로 텍스트·이미지 최대 너비 */
     --font:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
     color-scheme:light;
   }
@@ -72,7 +73,8 @@
     height:calc(100vh - var(--header-h) - env(safe-area-inset-top,0px));
     height:calc(100svh - var(--header-h) - env(safe-area-inset-top,0px));
     min-height:480px;overflow:hidden;background:var(--hero-b);
-    --gutter:max(var(--side),calc((100% - var(--wrap)) / 2));
+    --gutter:max(var(--side),calc((100% - var(--wrap)) / 2));        /* 헤더 콘텐츠 기준 */
+    --hgutter:max(var(--side),calc((100% - var(--hero-wrap)) / 2)); /* 히어로 콘텐츠 기준 */
   }
   .slide{
     position:absolute;inset:0;opacity:0;visibility:hidden;
@@ -84,7 +86,7 @@
   .s2 .bg{background:radial-gradient(120% 90% at 78% 55%,#f4f2fb 0%,#eceaf5 45%,#e6e6f0 100%)}
   .s3 .bg{background:radial-gradient(120% 90% at 78% 55%,#fbfbfd 0%,#eff1f5 50%,#e7eaf0 100%)}
 
-  .pic-box{position:absolute;top:0;bottom:0;left:var(--gutter);right:var(--gutter);overflow:hidden}
+  .pic-box{position:absolute;top:0;bottom:0;left:var(--hgutter);right:var(--hgutter);overflow:hidden}
   .slide .pic{position:absolute;pointer-events:none;user-select:none}
   .s1 .pic{
     right:-13%;top:50%;width:min(82%,1300px);transform:translateY(-50%) scale(1.04);
@@ -105,8 +107,9 @@
   .slide.is-active .pic{opacity:1}
 
   .txt_box{
-    position:absolute;left:var(--gutter);right:var(--gutter);top:50%;transform:translateY(-50%);z-index:2;
-    padding-left:clamp(26px,calc(6.25vw - 64px),56px);
+    position:absolute;left:var(--hgutter);right:var(--hgutter);top:50%;transform:translateY(-50%);z-index:2;
+    /* 좁은 화면에서 왼쪽 인디케이터와 겹치지 않게 */
+    padding-left:max(0px,calc(var(--gutter) + 40px - var(--hgutter)));
   }
   .tit{
     margin:0;font-size:clamp(44px,5.3vw,78px);line-height:1.2;font-weight:700;letter-spacing:-.035em;
