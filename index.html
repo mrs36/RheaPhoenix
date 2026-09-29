@@ -187,6 +187,31 @@
   .feat-phoenix .f-text{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:clamp(24px,4.4vw,84px) 0 clamp(16px,3vw,60px)}
   .feat-phoenix .f-items{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}
 
+  /* Features 인터랙션 (참고: u2clab.com Service 섹션)
+     - 스크롤 등장: fadeInUp (아래 100px → 제자리, 1초 / 이미지 1.8초), 요소별 지연 --d
+     - 특징 항목 hover: ↗ 화살표 검정 + 오른쪽 위로 3px 이동
+     - 커서: 섹션 위에서 파란 원형 "View More" 포인터가 따라다님 */
+  .fx-on .fx{opacity:0}
+  .fx-on .fx.in{animation:fadeInUp 1s var(--d,0s) both}
+  .fx-on .fx-slow.in{animation-duration:1.8s}
+  @keyframes fadeInUp{from{opacity:0;transform:translateY(100px)}to{opacity:1;transform:none}}
+  .f-arr{transition:transform .5s,color .5s}
+  .pointer{position:fixed;left:0;top:0;z-index:100;pointer-events:none;display:none}
+  .pointer .pointer_box{
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    width:150px;height:150px;border-radius:50%;transform:translate(-50%,-50%);opacity:0;
+    background:rgba(0,81,199,.9);color:#fff;font-size:20px;font-weight:600;line-height:1.4;text-align:center;
+    transition:all .3s ease-out;
+  }
+  .pointer.on .pointer_box{opacity:1}
+  @media (min-width:1024px){
+    .f-items li:hover .f-arr{color:#000;transform:translate(3px,-3px)}
+  }
+  @media (min-width:769px) and (hover:hover) and (pointer:fine){
+    .pointer{display:block}
+    .feat{cursor:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"><rect width="1" height="1" fill="rgb(0,81,199)" fill-opacity=".8"/></svg>') 0 0,auto}
+  }
+
   /* 파란 영역 (내용은 추후) */
   .band{background:var(--feat-blue);min-height:clamp(480px,63vw,1200px)}
 
@@ -337,38 +362,39 @@
   <section class="feat feat-rhea" id="rhea" aria-labelledby="rhea-tit">
     <div class="f-text">
       <div>
-        <p class="eyebrow">Features</p>
-        <h2 class="f-tit" id="rhea-tit">Rhea</h2>
-        <p class="f-desc">80ml 전혈에서 5분 만에 10~18ml의 고품질 BaM(생리활성분자)을 생산하는<br>백(Bag) 기반 자가 혈액 생리활성 분자 증강 시스템</p>
+        <p class="eyebrow fx">Features</p>
+        <h2 class="f-tit fx" style="--d:.3s" id="rhea-tit">Rhea</h2>
+        <p class="f-desc fx" style="--d:.5s">80ml 전혈에서 5분 만에 10~18ml의 고품질 BaM(생리활성분자)을 생산하는<br>백(Bag) 기반 자가 혈액 생리활성 분자 증강 시스템</p>
       </div>
       <ul class="f-items">
-        <li><h3>폐쇄형 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>오염 방지용 밀폐형 구조로<br>오염 위험을 원천 차단</p></li>
-        <li><h3>특허 레이섬 볼 구조<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>특허된 레이섬 볼(Latham Bowl)<br>구조로 세포 품질 유지</p></li>
-        <li><h3>스마트 센서 정밀 수집<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>소프트웨어와 광학 센서 제어로<br>5분 내 정밀 수집</p></li>
+        <li class="fx" style="--d:.4s"><h3>폐쇄형 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>오염 방지용 밀폐형 구조로<br>오염 위험을 원천 차단</p></li>
+        <li class="fx" style="--d:.6s"><h3>특허 레이섬 볼 구조<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>특허된 레이섬 볼(Latham Bowl)<br>구조로 세포 품질 유지</p></li>
+        <li class="fx" style="--d:.8s"><h3>스마트 센서 정밀 수집<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>소프트웨어와 광학 센서 제어로<br>5분 내 정밀 수집</p></li>
       </ul>
     </div>
-    <figure class="f-pic"><img src="img/web/feature-rhea-kit.webp" alt="Rhea 일회용 키트 (레이섬 볼과 수집 백)" width="989" height="556" loading="lazy" decoding="async"></figure>
+    <figure class="f-pic fx fx-slow"><img src="img/web/feature-rhea-kit.webp" alt="Rhea 일회용 키트 (레이섬 볼과 수집 백)" width="989" height="556" loading="lazy" decoding="async"></figure>
   </section>
 
   <section class="feat feat-phoenix" id="phoenix" aria-labelledby="phoenix-tit">
-    <figure class="f-pic"><img src="img/web/feature-phoenix-prp.webp" alt="Phoenix로 추출한 고농축 PRP(붉은색)와 PPP(노란색) 주사기" width="482" height="588" loading="lazy" decoding="async"></figure>
+    <figure class="f-pic fx fx-slow"><img src="img/web/feature-phoenix-prp.webp" alt="Phoenix로 추출한 고농축 PRP(붉은색)와 PPP(노란색) 주사기" width="482" height="588" loading="lazy" decoding="async"></figure>
     <div class="f-text">
       <div>
-        <p class="eyebrow">Features</p>
-        <h2 class="f-tit" id="phoenix-tit">Phoenix</h2>
-        <p class="f-desc">원클릭 자동화로 다양한 성장인자를 결합한 고농축 PRP를 만드는<br>시린지 기반 정밀 BaM(생리활성분자) 제조 시스템</p>
+        <p class="eyebrow fx">Features</p>
+        <h2 class="f-tit fx" style="--d:.3s" id="phoenix-tit">Phoenix</h2>
+        <p class="f-desc fx" style="--d:.5s">원클릭 자동화로 다양한 성장인자를 결합한 고농축 PRP를 만드는<br>시린지 기반 정밀 BaM(생리활성분자) 제조 시스템</p>
       </div>
       <ul class="f-items">
-        <li><h3>완전 밀폐형 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>공기 노출 및 감염 위험을<br>원천 차단한 추출 방식</p></li>
-        <li><h3>6분 내 신속한 처리<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>레이섬 볼을 이용한<br>고속 회전으로 신속한 처리</p></li>
-        <li><h3>2.5배 높은 혈소판 농도<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>광학 센서 기술로 구현한<br>기준치 대비 2.5배 농축률</p></li>
-        <li><h3>자동화 고농축 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>원클릭으로 고농축 PRP와 PPP를<br>자동으로 동시 추출</p></li>
+        <li class="fx" style="--d:.5s"><h3>완전 밀폐형 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>공기 노출 및 감염 위험을<br>원천 차단한 추출 방식</p></li>
+        <li class="fx" style="--d:.6s"><h3>6분 내 신속한 처리<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>레이섬 볼을 이용한<br>고속 회전으로 신속한 처리</p></li>
+        <li class="fx" style="--d:.7s"><h3>2.5배 높은 혈소판 농도<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>광학 센서 기술로 구현한<br>기준치 대비 2.5배 농축률</p></li>
+        <li class="fx" style="--d:.8s"><h3>자동화 고농축 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>원클릭으로 고농축 PRP와 PPP를<br>자동으로 동시 추출</p></li>
       </ul>
     </div>
   </section>
 
   <section class="band" aria-label="추가 콘텐츠 영역"></section>
 </main>
+<div class="pointer" aria-hidden="true"><div class="pointer_box"><span>View<br> More</span></div></div>
 
 <script>
 (function(){
@@ -413,6 +439,29 @@
   });
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){paused=true;vis.classList.add('paused');toggle.setAttribute('aria-label','자동 재생 시작')}
   schedule();
+})();
+
+/* Features 인터랙션 (참고: u2clab.com Service 섹션) */
+(function(){
+  /* 스크롤 등장 — 화면에 들어오면 한 번만 */
+  var fx=document.querySelectorAll('.fx');
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('fx-on');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    });
+    fx.forEach(function(el){io.observe(el)});
+  }
+
+  /* View More 포인터 */
+  var pointer=document.querySelector('.pointer');
+  document.querySelectorAll('.feat').forEach(function(sec){
+    sec.addEventListener('mouseenter',function(){pointer.classList.add('on')});
+    sec.addEventListener('mouseleave',function(){pointer.classList.remove('on')});
+  });
+  document.addEventListener('mousemove',function(e){
+    pointer.style.transform='translate3d('+e.clientX+'px,'+e.clientY+'px,0)';
+  });
 })();
 </script>
 
