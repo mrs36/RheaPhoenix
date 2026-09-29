@@ -86,7 +86,7 @@
   .s2 .bg{background:radial-gradient(120% 90% at 78% 55%,#f4f2fb 0%,#eceaf5 45%,#e6e6f0 100%)}
   .s3 .bg{background:radial-gradient(120% 90% at 78% 55%,#fbfbfd 0%,#eff1f5 50%,#e7eaf0 100%)}
 
-  .pic-box{position:absolute;top:0;bottom:0;left:var(--hgutter);right:var(--hgutter);overflow:hidden}
+  .pic-box{position:absolute;top:0;bottom:0;left:var(--hgutter);right:var(--hgutter);overflow:hidden;z-index:1}
   .slide .pic{position:absolute;pointer-events:none;user-select:none}
   .s2 .pic,.s3 .pic{
     right:0;top:52%;height:80%;width:auto;max-width:50%;object-fit:contain;
@@ -108,6 +108,8 @@
     color:var(--ink);text-wrap:balance;
   }
   .tit .en{font-weight:800;letter-spacing:-.02em}
+  /* 제목이 길어도 한 줄 유지 — 제품 이미지는 텍스트 아래 레이어 (PC) */
+  @media (min-width:1024px){.tit{white-space:nowrap}}
   .desc{
     margin:18px 0 0;font-size:clamp(17px,1.875vw,27px);line-height:1.6;font-weight:400;color:var(--accent);
     letter-spacing:-.02em;
@@ -391,7 +393,7 @@
   mNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mNav.classList.remove('open')})});
 
   /* hero fade slider */
-  var DUR=5000;
+  var DUR=3500;
   var vis=document.getElementById('visual');
   var slides=vis.querySelectorAll('.slide');
   var bullets=vis.querySelectorAll('.bullet');
