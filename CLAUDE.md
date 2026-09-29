@@ -61,6 +61,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   1. Rhea — "Rhea / 자가 혈액 생리활성 분자 증강 시스템" (사용자가 직접 수정). 설명: 최신 혈액 원심분리 기술을 적용한 완전 자동화 시스템으로 / 고품질 BaM 생산. 자가 유래 BaM을 효과적으로 농축
   2. Phoenix — "Phoenix / 시린지 농축 시스템"
   - PC(1024px 이상)에서 제목은 한 줄 유지(nowrap), 제품 이미지는 텍스트 아래 레이어 — 겹쳐도 됨(사용자 결정). 모바일은 기존처럼 줄바꿈
+  - 하단 흐르는 문구: "Autologous BaM(Bio-active Molecules) Enrich System" — 300pt(모바일 120px), 흰색 50% 투명, 굵게. 오른쪽→왼쪽으로 계속 흐름(60초 한 바퀴, 문구 2개 이어 붙인 marquee). 참고: miracell.co.kr #mainAbout. 레이어: 배경 위·제품 이미지와 제목 아래. 두 슬라이드에 각각 넣음
   - Rhea+Phoenix 함께 있는 슬라이드는 사용자 요청으로 삭제 (원본 `img/hero-rhea-phoenix-*.png`는 남겨둠)
 - Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
   1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 특징 3개 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
@@ -109,6 +110,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: Features 섹션(Rhea / Phoenix) + 파란 영역(색만)
 - 완료: Features 섹션 인터랙션(스크롤 등장, 화살표 hover) — 참고 사이트 코드 기준. View More 포인터는 삭제
 - 완료: Rhea 히어로 이미지 교체 (사용자가 새로 올린 img/hero-rhea-{pc,mo}.png → img/web/ webp, PC 1352×1407 / 모바일 730×788). 원본 캔버스가 같아도 그림 영역 높이가 달라지면 자동 여백 자르기로 확대되므로, 이전 이미지와 같은 배율(같은 자르기 높이)로 맞춤)
+- 완료: 히어로 하단 흐르는 문구(marquee) 추가
 - 완료: 제품 핵심 문구(사용자 제공 + Rhea 카탈로그) CLAUDE.md에 저장 — 자료 파일 원본 보관 위치는 사용자와 상의 중(저장소가 Public)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용

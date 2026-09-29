@@ -86,6 +86,11 @@
   .s2 .bg{background:radial-gradient(120% 90% at 78% 55%,#f4f2fb 0%,#eceaf5 45%,#e6e6f0 100%)}
   .s3 .bg{background:radial-gradient(120% 90% at 78% 55%,#fbfbfd 0%,#eff1f5 50%,#e7eaf0 100%)}
 
+  /* 히어로 하단 흐르는 문구 (참고: miracell.co.kr #mainAbout marquee) — 흰색 50%, 300pt, 배경 위·제품 이미지 아래 */
+  .marquee{position:absolute;left:0;right:0;bottom:0;overflow:hidden;pointer-events:none;user-select:none}
+  .marquee .absol{display:flex;width:max-content;animation:marquee 60s linear infinite}
+  .marquee .mar_ch{flex:none;padding-right:.35em;font-size:300pt;line-height:.9;font-weight:800;letter-spacing:-.03em;white-space:nowrap;color:rgba(255,255,255,.5)}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .pic-box{position:absolute;top:0;bottom:0;left:var(--hgutter);right:var(--hgutter);overflow:hidden;z-index:1}
   .slide .pic{position:absolute;pointer-events:none;user-select:none}
   .s2 .pic,.s3 .pic{
@@ -243,6 +248,7 @@
     .ctrl{left:24px;right:auto;top:auto;bottom:24px;transform:none;flex-direction:row}
     .bullets{flex-direction:row}
     .scroll-cue{display:none}
+    .marquee .mar_ch{font-size:120px}
     .feat-rhea,.feat-phoenix{flex-direction:column;gap:36px;padding-inline:24px}
     .feat-rhea{padding-top:80px;padding-bottom:72px}
     .feat-phoenix{padding-bottom:80px}
@@ -314,6 +320,7 @@
   <section class="visual" id="visual" aria-roledescription="carousel" aria-label="제품 소개">
     <div class="slide s2 is-active is-first" aria-roledescription="slide" aria-label="1 / 2">
       <div class="bg"></div>
+      <div class="marquee" aria-hidden="true"><div class="absol"><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span></div></div>
       <div class="pic-box"><picture><source media="(max-width:1023px)" srcset="img/web/hero-rhea-mo.webp"><img class="pic" src="img/web/hero-rhea-pc.webp" alt="Rhea 장비" width="1352" height="1407" fetchpriority="high" decoding="async"></picture></div>
       <div class="txt_box">
         <p class="tit fade-up"><span class="en">Rhea</span><br>자가 혈액 생리활성 분자 증강 시스템</p>
@@ -325,6 +332,7 @@
 
     <div class="slide s3" aria-roledescription="slide" aria-label="2 / 2">
       <div class="bg"></div>
+      <div class="marquee" aria-hidden="true"><div class="absol"><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span></div></div>
       <div class="pic-box"><picture><source media="(max-width:1023px)" srcset="img/web/hero-phoenix-mo.webp"><img class="pic" src="img/web/hero-phoenix-pc.webp" alt="Phoenix 장비" width="1224" height="1042" decoding="async"></picture></div>
       <div class="txt_box">
         <p class="tit fade-up"><span class="en">Phoenix</span><br>BaM 제조 시스템</p>
