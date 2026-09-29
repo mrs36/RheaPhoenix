@@ -41,6 +41,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 
 - `index.html` — 사이트 전체. CSS·JS·로고(SVG)·이미지(webp data URI)가 모두 한 파일 안에 들어 있다.
   - 이미지 base64 문자열이 매우 길므로, 수정할 때는 해당 부분을 건드리지 말고 텍스트/CSS/HTML 구조만 찾아서 고친다.
+- `.claude/skills/figma-export/SKILL.md` — 디자인 화면을 Figma 파일로 내보내는 규칙(스킬). Figma로 보낼 때는 이 스킬을 따른다.
 
 ## 현재 구성
 
@@ -58,6 +59,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 ## 진행 현황
 
 - 완료: header + hero 영역, GitHub Pages 배포
+- 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
   - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
