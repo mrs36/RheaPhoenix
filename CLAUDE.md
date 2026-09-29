@@ -64,7 +64,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   - 하단 흐르는 문구: "Autologous BaM(Bio-active Molecules) Enrich System" — 150pt(=200px, 모바일 60px, 처음 300pt에서 사용자 요청으로 1/2), 히어로 세로 가운데 배치(사용자 요청, 이전엔 하단 -40px), 흰색 30% 투명(사용자 요청으로 50%→30%), 굵게. 오른쪽→왼쪽으로 계속 흐름(60초 한 바퀴, 문구 2개 이어 붙인 marquee). 참고: miracell.co.kr #mainAbout. 레이어: 배경 위·제품 이미지와 제목 아래. 두 슬라이드에 각각 넣음
   - Rhea+Phoenix 함께 있는 슬라이드는 사용자 요청으로 삭제 (원본 `img/hero-rhea-phoenix-*.png`는 남겨둠)
 - Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
-  1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 설명: "자가 혈액 생리활성 분자 증강 시스템 / Autologous Bio-active Molecules Enrich System"(사용자 선택 B안, 원문). 특징 3개(제목·설명 수정 여부 미정) — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
+  1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 설명: "자가 혈액 생리활성 분자 증강 시스템 / Autologous Bio-active Molecules Enrich System"(사용자 선택 B안, 원문). 특징 3개 — 카탈로그 Core Competency 원문(영문 제목 / 한글 설명): Functional Close system / 폐쇄형 시스템으로 오염 원천 차단, Patented Latham Bowl Design / 특허된 레이섬 볼 구조로 세포 품질 유지, Precision collection / 스마트 센서로 5분 내 정밀 수집 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
   2. Phoenix (`#phoenix`): 이미지 왼쪽 / 텍스트 오른쪽. 설명: 카탈로그 원문 문장(Phoenix는 원클릭 자동화 시스템으로 …). 특징 4개 — 안전성·효율성·정밀함·편의성 (국문 카탈로그 원문과 대조해 "인한", "압도적" 누락 보완 완료). 이미지: PRP·PPP 주사기 사진(`img/feature-phoenix-prp.png`, Phoenix 영문 브로셔에서 추출, 해상도 낮음)
   3. 파란 영역(`.band`, rgb(0,99,242)): 참고 사이트의 Experiences 자리. 내용 없이 색만 — 추후 상의
   - 특징 항목: 참고 사이트와 같게 제목 + 회색 ↗ 화살표 + 회색 설명 (작은 파란 라벨 없음). 화살표는 현재 장식용(링크 없음 — 상세 페이지 생기면 연결)
@@ -128,7 +128,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: Features 섹션 인터랙션(스크롤 등장, 화살표 hover) — 참고 사이트 코드 기준. View More 포인터는 삭제
 - 완료: Rhea 히어로 이미지 교체 (사용자가 새로 올린 img/hero-rhea-{pc,mo}.png → img/web/ webp, PC 1352×1407 / 모바일 730×788). 원본 캔버스가 같아도 그림 영역 높이가 달라지면 자동 여백 자르기로 확대되므로, 이전 이미지와 같은 배율(같은 자르기 높이)로 맞춤)
 - 완료: 히어로 하단 흐르는 문구(marquee) 추가
-- 완료: Features 문구 원문으로 교체 — Rhea 설명(B안), Phoenix 설명·특징 4개(국문 카탈로그 대조)
+- 완료: Features 문구 원문으로 교체 — Rhea 설명(B안)·특징 3개, Phoenix 설명·특징 4개(국문 카탈로그 대조)
 - 완료: 제품 핵심 문구(사용자 제공 + Rhea 카탈로그) CLAUDE.md에 저장 — 자료 파일 원본 보관 위치는 사용자와 상의 중(저장소가 Public)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
