@@ -66,7 +66,10 @@
   /* ---------- Hero ---------- */
   .visual{
     position:relative;margin-top:calc(var(--header-h) + env(safe-area-inset-top,0px));
-    height:clamp(560px,55.6vw,800px);overflow:hidden;background:var(--hero-b);
+    /* 첫 화면 = 헤더 + 히어로 (100vh) */
+    height:calc(100vh - var(--header-h) - env(safe-area-inset-top,0px));
+    height:calc(100svh - var(--header-h) - env(safe-area-inset-top,0px));
+    min-height:480px;overflow:hidden;background:var(--hero-b);
   }
   .slide{
     position:absolute;inset:0;opacity:0;visibility:hidden;
@@ -81,8 +84,9 @@
   .slide .pic{position:absolute;pointer-events:none;user-select:none}
   .s1 .pic{
     right:-16%;top:50%;width:min(82%,1300px);transform:translateY(-50%) scale(1.04);
-    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);
-            mask-image:linear-gradient(90deg,transparent 0%,#000 22%);
+    -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%,#000 86%,transparent 100%);
+            mask-image:linear-gradient(90deg,transparent 0%,#000 22%),linear-gradient(180deg,transparent 0%,#000 14%,#000 86%,transparent 100%);
+    -webkit-mask-composite:source-in;mask-composite:intersect;
     transition:transform 7s ease-out;
   }
   .s2 .pic,.s3 .pic{
@@ -179,18 +183,18 @@
     .gnb{display:none}
     .util{width:auto}
     .menu-btn{display:grid}
-    .visual{height:auto;min-height:620px;aspect-ratio:auto}
-    .slide{display:flex;flex-direction:column}
+    .visual{height:auto;min-height:calc(100svh - var(--header-h) - env(safe-area-inset-top,0px));aspect-ratio:auto}
+    .slide{display:flex;flex-direction:column;min-height:inherit;padding-bottom:64px}
     .slide:not(.is-active){position:absolute}
     .slide.is-active{position:relative}
-    .txt_box{position:relative;top:auto;transform:none;padding:56px 24px 0}
+    .txt_box{position:relative;top:auto;transform:none;padding:56px 24px 16px}
     .tit{font-size:clamp(32px,8.6vw,48px)}
     .desc{font-size:16px;margin-top:12px}
     .more{margin-top:22px;padding:10px 18px;font-size:14px}
     .txt_box{order:1}.slide .pic{order:2}
-    .slide .pic{position:relative;right:auto;top:auto;transform:none!important;margin:auto auto 64px;display:block}
-    .s1 .pic{width:132%;max-width:none;margin-left:-16%;margin-right:-16%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);margin-top:8px}
-    .s2 .pic,.s3 .pic{height:auto;width:min(86%,460px);max-width:none;margin-top:24px}
+    .slide .pic{position:relative;right:auto;top:auto;transform:none!important;margin:auto;display:block}
+    .s1 .pic{width:132%;max-width:none;margin-left:-16%;margin-right:-16%;-webkit-mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);margin-top:auto;margin-bottom:auto}
+    .s2 .pic,.s3 .pic{height:auto;width:min(86%,460px);max-width:none}
     .ctrl{left:24px;right:auto;top:auto;bottom:24px;transform:none;flex-direction:row}
     .bullets{flex-direction:row}
     .scroll-cue{display:none}
