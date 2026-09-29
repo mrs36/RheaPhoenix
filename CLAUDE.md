@@ -61,7 +61,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   1. Rhea — "Rhea / 자가 혈액 생리활성 분자 증강 시스템" (사용자가 직접 수정). 설명: 최신 혈액 원심분리 기술을 적용한 완전 자동화 시스템으로 / 고품질 BaM 생산. 자가 유래 BaM을 효과적으로 농축
   2. Phoenix — "Phoenix / 시린지 농축 시스템"
   - PC(1024px 이상)에서 제목은 한 줄 유지(nowrap), 제품 이미지는 텍스트 아래 레이어 — 겹쳐도 됨(사용자 결정). 모바일은 기존처럼 줄바꿈
-  - 하단 흐르는 문구: "Autologous BaM(Bio-active Molecules) Enrich System" — 150pt(=200px, 모바일 60px, 처음 300pt에서 사용자 요청으로 1/2), 하단에서 40px 아래로 내림(bottom:-40px, 글자 아랫부분 일부 잘림), 흰색 50% 투명, 굵게. 오른쪽→왼쪽으로 계속 흐름(60초 한 바퀴, 문구 2개 이어 붙인 marquee). 참고: miracell.co.kr #mainAbout. 레이어: 배경 위·제품 이미지와 제목 아래. 두 슬라이드에 각각 넣음
+  - 하단 흐르는 문구: "Autologous BaM(Bio-active Molecules) Enrich System" — 150pt(=200px, 모바일 60px, 처음 300pt에서 사용자 요청으로 1/2), 히어로 세로 가운데 배치(사용자 요청, 이전엔 하단 -40px), 흰색 30% 투명(사용자 요청으로 50%→30%), 굵게. 오른쪽→왼쪽으로 계속 흐름(60초 한 바퀴, 문구 2개 이어 붙인 marquee). 참고: miracell.co.kr #mainAbout. 레이어: 배경 위·제품 이미지와 제목 아래. 두 슬라이드에 각각 넣음
   - Rhea+Phoenix 함께 있는 슬라이드는 사용자 요청으로 삭제 (원본 `img/hero-rhea-phoenix-*.png`는 남겨둠)
 - Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
   1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 특징 3개 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
