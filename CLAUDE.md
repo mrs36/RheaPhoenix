@@ -60,6 +60,13 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   1. Rhea+Phoenix 함께 있는 이미지 — "정밀한 농축, 신뢰할 수 있는 결과"
   2. Rhea — "Rhea / 폐쇄형 백 농축 시스템"
   3. Phoenix — "Phoenix / 시린지 농축 시스템"
+- Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
+  1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 특징 3개 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
+  2. Phoenix (`#phoenix`): 이미지 왼쪽 / 텍스트 오른쪽. 특징 4개 — 안전성·효율성·정밀함·편의성 (Phoenix 카탈로그 문구). 이미지: PRP·PPP 주사기 사진(`img/feature-phoenix-prp.png`, Phoenix 영문 브로셔에서 추출, 해상도 낮음)
+  3. 파란 영역(`.band`, rgb(0,99,242)): 참고 사이트의 Experiences 자리. 내용 없이 색만 — 추후 상의
+  - 참고 사이트의 항목 옆 ↗ 화살표(상세 링크)는 연결할 상세 페이지가 없어 넣지 않음
+- 제품 자료 (사용자 제공, 저장소에는 없음): Rhea 카탈로그, Phoenix 카탈로그(국문), Phoenix 브로셔(영문), 대만 허가증·특허증·GMP 인증서 이미지, 유튜브 영상 https://www.youtube.com/watch?v=AJ8wMS4t8UA
+  - 인증서 유효기간 지남(허가증 2024-11, 특허 2024-10, GMP 2021-10) → 사이트 게재 전 갱신본 확인 필요
 - 색: 제목 #0e1024, 설명 파랑 #2448c9, 브랜드 네이비 #171b46, 레드 #ec2227
 - 폰트: Pretendard(설치된 경우) → Noto Sans KR(Google Fonts)
 
@@ -69,9 +76,11 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: 히어로 전체 화면형(100vh) 적용
 - 완료: 콘텐츠 너비 레이아웃 적용 — 헤더 1792px, 히어로 1440px
 - 완료: 히어로 제품 이미지 교체 (사용자 제공 img/ → img/web/ webp, PC 3장 + 모바일 3장)
+- 완료: Features 섹션(Rhea / Phoenix) + 파란 영역(색만)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
   - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
-  - Hero 아래 섹션(About Us, Rhea, Phoenix, Contact Us)은 아직 없음 — 구성은 사용자와 상의 후 제작
+  - 파란 영역 내용, About Us / Contact Us 섹션은 아직 없음 — 구성은 사용자와 상의 후 제작
+  - Phoenix 특징 이미지 해상도 낮음(482px) — 고해상도 사진 있으면 교체

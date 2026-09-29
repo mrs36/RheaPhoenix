@@ -18,7 +18,8 @@
     --header-h:100px;
     --wrap:1792px;   /* 콘텐츠 최대 너비 (1920 화면 기준 좌우 64px 여백) */
     --side:64px;     /* 최소 좌우 여백 */
-    --hero-wrap:1440px; /* 히어로 텍스트·이미지 최대 너비 */
+    --hero-wrap:1440px; /* 히어로·본문 텍스트·이미지 최대 너비 */
+    --feat-blue:rgb(0,99,242);
     --font:"Pretendard Variable",Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
     color-scheme:light;
   }
@@ -163,6 +164,38 @@
   .scroll-cue i{width:1px;height:38px;background:linear-gradient(var(--muted),transparent);animation:cue 2s ease-in-out infinite;transform-origin:top}
   @keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
+
+  /* ---------- Features (Rhea / Phoenix) ---------- */
+  .feat{
+    --gutter:max(var(--side),calc((100% - var(--hero-wrap)) / 2));
+    position:relative;scroll-margin-top:var(--header-h);
+  }
+  .feat .eyebrow{margin:0;font-size:clamp(15px,1.05vw,20px);font-weight:700;color:var(--feat-blue);letter-spacing:-.01em}
+  .feat .f-tit{margin:6px 0 0;font-size:clamp(40px,3.3vw,62px);line-height:1.15;font-weight:800;letter-spacing:-.03em;color:var(--ink)}
+  .feat .f-desc{margin:22px 0 0;font-size:clamp(15px,.95vw,17px);line-height:1.7;color:#33364a;letter-spacing:-.02em}
+  .f-items{display:grid;gap:40px 36px;margin:0;padding:0;list-style:none}
+  .f-items h3{margin:0;font-size:clamp(19px,1.3vw,24px);font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+  .f-items h3 small{display:block;margin-bottom:6px;font-size:13px;font-weight:700;color:var(--feat-blue);letter-spacing:0}
+  .f-items p{margin:12px 0 0;font-size:clamp(14px,.85vw,15.5px);line-height:1.7;color:var(--muted);letter-spacing:-.02em}
+  .f-pic{margin:0;overflow:hidden;background:#eef1f6}
+  .f-pic img{display:block;width:100%;height:100%;object-fit:cover}
+
+  /* Rhea: 텍스트 왼쪽 / 이미지 오른쪽 (화면 오른쪽 끝까지) */
+  .feat-rhea{display:flex;align-items:stretch;gap:clamp(40px,4vw,80px);padding:clamp(100px,8vw,150px) 0 clamp(90px,7vw,140px) var(--gutter)}
+  .feat-rhea .f-text{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:48px}
+  .feat-rhea .f-pic{flex:0 0 44%;aspect-ratio:16/9}
+  .feat-rhea .f-pic img{mix-blend-mode:multiply}
+  .feat-rhea .f-items{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+  /* Phoenix: 이미지 왼쪽 / 텍스트 오른쪽 */
+  .feat-phoenix{display:flex;align-items:stretch;gap:clamp(32px,3.2vw,60px);padding:0 var(--gutter) clamp(100px,8vw,150px)}
+  .feat-phoenix .f-pic{flex:0 0 38.5%;aspect-ratio:393/480}
+  .feat-phoenix .f-text{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:48px;padding:clamp(24px,4.4vw,84px) 0 clamp(16px,3vw,60px)}
+  .feat-phoenix .f-items{grid-template-columns:repeat(2,minmax(0,1fr));max-width:720px}
+
+  /* 파란 영역 (내용은 추후) */
+  .band{background:var(--feat-blue);min-height:clamp(480px,63vw,1200px)}
+
   /* ---------- Mobile nav ---------- */
   .m-nav{
     position:fixed;inset:0;z-index:60;background:var(--paper);
@@ -203,6 +236,17 @@
     .ctrl{left:24px;right:auto;top:auto;bottom:24px;transform:none;flex-direction:row}
     .bullets{flex-direction:row}
     .scroll-cue{display:none}
+    .feat-rhea,.feat-phoenix{flex-direction:column;gap:36px;padding-inline:24px}
+    .feat-rhea{padding-top:80px;padding-bottom:72px}
+    .feat-phoenix{padding-bottom:80px}
+    .feat-rhea .f-pic,.feat-phoenix .f-pic{flex:none;width:100%}
+    .feat-phoenix .f-pic{order:2;aspect-ratio:4/3}
+    .feat-phoenix .f-text{order:1;padding:0}
+    .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
+    .band{min-height:420px}
+  }
+  @media (max-width:560px){
+    .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -306,6 +350,41 @@
 
     <div class="scroll-cue" aria-hidden="true">SCROLL<i></i></div>
   </section>
+
+  <section class="feat feat-rhea" id="rhea" aria-labelledby="rhea-tit">
+    <div class="f-text">
+      <div>
+        <p class="eyebrow">Features</p>
+        <h2 class="f-tit" id="rhea-tit">Rhea</h2>
+        <p class="f-desc">80ml 전혈에서 5분 만에 10~18ml의 고품질 BaM(생리활성분자)을 생산하는<br>백(Bag) 기반 자가 혈액 생리활성 분자 증강 시스템</p>
+      </div>
+      <ul class="f-items">
+        <li><h3>폐쇄형 시스템</h3><p>오염 방지용 밀폐형 구조로<br>오염 위험을 원천 차단</p></li>
+        <li><h3>특허 레이섬 볼 구조</h3><p>특허된 레이섬 볼(Latham Bowl)<br>구조로 세포 품질 유지</p></li>
+        <li><h3>스마트 센서 정밀 수집</h3><p>소프트웨어와 광학 센서 제어로<br>5분 내 정밀 수집</p></li>
+      </ul>
+    </div>
+    <figure class="f-pic"><img src="img/web/feature-rhea-kit.webp" alt="Rhea 일회용 키트 (레이섬 볼과 수집 백)" width="989" height="556" loading="lazy" decoding="async"></figure>
+  </section>
+
+  <section class="feat feat-phoenix" id="phoenix" aria-labelledby="phoenix-tit">
+    <figure class="f-pic"><img src="img/web/feature-phoenix-prp.webp" alt="Phoenix로 추출한 고농축 PRP(붉은색)와 PPP(노란색) 주사기" width="482" height="588" loading="lazy" decoding="async"></figure>
+    <div class="f-text">
+      <div>
+        <p class="eyebrow">Features</p>
+        <h2 class="f-tit" id="phoenix-tit">Phoenix</h2>
+        <p class="f-desc">원클릭 자동화로 다양한 성장인자를 결합한 고농축 PRP를 만드는<br>시린지 기반 정밀 BaM(생리활성분자) 제조 시스템</p>
+      </div>
+      <ul class="f-items">
+        <li><h3><small>안전성</small>완전 밀폐형 시스템</h3><p>공기 노출 및 감염 위험을<br>원천 차단한 추출 방식</p></li>
+        <li><h3><small>효율성</small>6분 내 신속한 처리</h3><p>레이섬 볼을 이용한<br>고속 회전으로 신속한 처리</p></li>
+        <li><h3><small>정밀함</small>2.5배 높은 혈소판 농도</h3><p>광학 센서 기술로 구현한<br>기준치 대비 2.5배 농축률</p></li>
+        <li><h3><small>편의성</small>자동화 고농축 시스템</h3><p>원클릭으로 고농축 PRP와 PPP를<br>자동으로 동시 추출</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-label="추가 콘텐츠 영역"></section>
 </main>
 
 <script>
