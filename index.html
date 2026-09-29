@@ -87,7 +87,7 @@
   .s3 .bg{background:radial-gradient(120% 90% at 78% 55%,#fbfbfd 0%,#eff1f5 50%,#e7eaf0 100%)}
 
   /* 히어로 하단 흐르는 문구 (참고: miracell.co.kr #mainAbout marquee) — 흰색 30%, 150pt, 세로 가운데, 배경 위·제품 이미지 아래 */
-  .marquee{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);overflow:hidden;pointer-events:none;user-select:none}
+  .marquee{position:absolute;left:var(--hgutter);right:var(--hgutter);top:70%;transform:translateY(-50%);overflow:hidden;pointer-events:none;user-select:none}
   .marquee .absol{display:flex;width:max-content;animation:marquee 60s linear infinite}
   .marquee .mar_ch{flex:none;padding-right:.35em;font-size:150pt;line-height:.9;font-weight:800;letter-spacing:-.03em;white-space:nowrap;color:rgba(255,255,255,.3)}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
