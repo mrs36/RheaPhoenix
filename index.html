@@ -112,6 +112,8 @@
     margin:18px 0 0;font-size:clamp(17px,1.875vw,27px);line-height:1.6;font-weight:400;color:var(--accent);
     letter-spacing:-.02em;
   }
+  .tit .ko{font-size:.78em;line-height:1.25}
+  .desc strong{font-weight:700}
   .fade-up{transform:translateY(40px);opacity:.001}
   .slide.is-active .fade-up{animation:fadeUp 1s cubic-bezier(.2,.7,.2,1) forwards}
   .slide.is-active .desc.fade-up{animation-delay:.25s}
@@ -251,6 +253,7 @@
     .band{min-height:420px}
   }
   @media (max-width:560px){
+    .desc br{display:none}
     .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:1fr}
   }
   @media (prefers-reduced-motion:reduce){
@@ -314,8 +317,8 @@
       <div class="bg"></div>
       <div class="pic-box"><picture><source media="(max-width:1023px)" srcset="img/web/hero-rhea-mo.webp"><img class="pic" src="img/web/hero-rhea-pc.webp" alt="Rhea 장비" width="1363" height="1419" fetchpriority="high" decoding="async"></picture></div>
       <div class="txt_box">
-        <p class="tit fade-up"><span class="en">Rhea</span><br>폐쇄형 백 농축 시스템</p>
-        <p class="desc fade-up">백(Bag) 기반의 폐쇄형 구성으로<br>대용량 시술에 맞춘 워크플로우를 제공합니다</p>
+        <p class="tit fade-up"><span class="en">Rhea</span><br><span class="ko">자가 혈액 생리활성<br>분자 증강 시스템</span></p>
+        <p class="desc fade-up">특허 <strong>레이섬 볼 시스템</strong>으로 80ml 전혈에서 <br>5분 만에 고품질 <strong>BaM(생리활성분자)</strong>을 수집합니다</p>
         <a class="more fade-up" href="#rhea">Rhea 자세히 보기
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
@@ -325,8 +328,8 @@
       <div class="bg"></div>
       <div class="pic-box"><picture><source media="(max-width:1023px)" srcset="img/web/hero-phoenix-mo.webp"><img class="pic" src="img/web/hero-phoenix-pc.webp" alt="Phoenix 장비" width="1224" height="1042" decoding="async"></picture></div>
       <div class="txt_box">
-        <p class="tit fade-up"><span class="en">Phoenix</span><br>시린지 농축 시스템</p>
-        <p class="desc fade-up">터치스크린 기반의 간편한 조작으로<br>빠르고 일관된 시술 준비를 돕습니다</p>
+        <p class="tit fade-up"><span class="en">Phoenix</span><br><span class="ko">다양한 성장인자를 결합한<br>복합 치료 솔루션</span></p>
+        <p class="desc fade-up">원클릭 자동화로 고품질 혈소판(DEPA 기준 충족)을 생성하는 <br>고농축 PRP · 정밀 <strong>BaM(생리활성분자)</strong> 제조 시스템</p>
         <a class="more fade-up" href="#phoenix">Phoenix 자세히 보기
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>

@@ -57,8 +57,9 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   - 모바일(1023px 이하): 햄버거 메뉴
 - Hero: 전체 화면형 — 헤더 + 히어로 = 화면 높이 100vh (첫 화면에 히어로만 보임, 모바일 포함)
 - Hero 슬라이더: 2장 페이드 슬라이더(5초 자동재생, 왼쪽 세로 인디케이터 + 일시정지)
-  1. Rhea — "Rhea / 폐쇄형 백 농축 시스템"
-  2. Phoenix — "Phoenix / 시린지 농축 시스템"
+  1. Rhea — "Rhea / 자가 혈액 생리활성 분자 증강 시스템", 설명: 특허 **레이섬 볼 시스템**으로 80ml 전혈에서 5분 만에 고품질 **BaM(생리활성분자)**을 수집합니다
+  2. Phoenix — "Phoenix / 다양한 성장인자를 결합한 복합 치료 솔루션", 설명: 원클릭 자동화로 고품질 혈소판(DEPA 기준 충족)을 생성하는 고농축 PRP · 정밀 **BaM(생리활성분자)** 제조 시스템
+  - 문구는 아래 "제품 핵심 문구" 기준. 한글 부제는 제품명보다 작게(.78em), 강조 단어는 굵게. 560px 이하에서는 설명 줄바꿈 없이 자연스럽게 흐름
   - Rhea+Phoenix 함께 있는 슬라이드는 사용자 요청으로 삭제 (원본 `img/hero-rhea-phoenix-*.png`는 남겨둠)
 - Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
   1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 특징 3개 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
@@ -72,8 +73,30 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
     - 미적용: 항목 hover 시 이미지 전환(제품별 이미지 1장뿐), 모바일 이미지 스와이프 슬라이드(레이아웃 변경) — 필요 시 상의
 - 제품 자료 (사용자 제공, 저장소에는 없음): Rhea 카탈로그, Phoenix 카탈로그(국문), Phoenix 브로셔(영문), 대만 허가증·특허증·GMP 인증서 이미지, 유튜브 영상 https://www.youtube.com/watch?v=AJ8wMS4t8UA
   - 인증서 유효기간 지남(허가증 2024-11, 특허 2024-10, GMP 2021-10) → 사이트 게재 전 갱신본 확인 필요
+  - 파일 목록: Rhea_catalog_ver1.pdf, Rhea_DM-Ophthalmology_eng.pdf, Phoenix_catalog.pdf(국문), PhoenixDM2_EN.pdf(영문 브로셔), Q_A.pptx
 - 색: 제목 #0e1024, 설명 파랑 #2448c9, 브랜드 네이비 #171b46, 레드 #ec2227
 - 폰트: Pretendard(설치된 경우) → Noto Sans KR(Google Fonts)
+
+## 제품 핵심 문구 (사용자 제공 — 사이트 문구는 여기 기준으로 작성)
+
+- 두 제품 공통 문구: **Autologous Bio-active Molecules Enrich System**
+- 강조 단어: **레이섬 볼 시스템**, **BaM(생체활성분자 / 생리활성분자)**
+
+### Rhea — 자가 혈액 생리활성 분자 증강 시스템
+- 영문: Rhea Autologous Bio-active Molecules Enrich System
+- Core Competency of Rhea
+  - Functional Close system — 폐쇄형 시스템으로 오염 원천 차단
+  - Patented Latham Bowl Design — 특허된 레이섬 볼 구조로 세포 품질 유지 (특허번호 Nr. 202016000191)
+  - Precision collection — 스마트 센서로 5분 내 정밀 수집
+- 5 minutes / Total Process!!
+- 카탈로그 설명: 최신 혈액 원심분리 기술을 적용한 완전 자동화 시스템, 소프트웨어와 광학 센서로 제어. 80mL 전혈에서 5분 내 약 10~18mL의 고품질 BaM 생산. 자가 유래 BaM을 효과적으로 농축
+- The Best Supporting Therapy: 미용·피부 재생 / 상처 치료·재생 / 안과 치료 / 정형외과 치료
+- 사양: Model ABM2, 원심 1000~6000RPM±2%, 수집 10~18ml, All-in-one button, 전혈 최소 80ml, 6kg, W28×D25×H23cm, BaM 형태 Gel·Eye Drops·Injections·Spray
+
+### Phoenix — Phoenix Autologous BaM(Bio-active Molecules) Enrich System
+- 다양한 성장인자를 결합한 복합 치료 솔루션
+- Phoenix는 원클릭 자동화 시스템으로 사용이 간편하며, 유연한 공정을 갖춘 정밀 BaM(생리활성분자) 제조 시스템으로, 고품질 혈소판(DEPA 기준 충족)을 효율적으로 생성합니다.
+- Phoenix의 고농축 PRP 기술 강조
 
 ## 진행 현황
 
@@ -84,10 +107,11 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: 히어로에서 Rhea+Phoenix 슬라이드 삭제 → 제품별 2장만
 - 완료: Features 섹션(Rhea / Phoenix) + 파란 영역(색만)
 - 완료: Features 섹션 인터랙션(스크롤 등장, 화살표 hover) — 참고 사이트 코드 기준. View More 포인터는 삭제
+- 완료: 제품 핵심 문구(사용자 제공 + Rhea 카탈로그) CLAUDE.md에 저장 — 자료 파일 원본 보관 위치는 사용자와 상의 중(저장소가 Public)
+- 완료: 히어로 문구를 제품 핵심 문구 기준으로 교체
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
 - 미결 (사용자와 상의 필요):
   - 임의로 넣었던 요소의 유지 여부: '자세히 보기' 버튼, SCROLL 표시, 검색·공유 아이콘
-  - 히어로 문구는 임시 문구 — 실제 제품 사양/문구 확인 후 교체
   - 파란 영역 내용, About Us / Contact Us 섹션은 아직 없음 — 구성은 사용자와 상의 후 제작
   - Phoenix 특징 이미지 해상도 낮음(482px) — 고해상도 사진 있으면 교체
