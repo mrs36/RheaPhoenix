@@ -67,6 +67,8 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 설명: "자가 혈액 생리활성 분자 증강 시스템 / Autologous Bio-active Molecules Enrich System"(사용자 선택 B안, 원문). 특징 3개 — 카탈로그 Core Competency 원문(영문 제목 / 한글 설명): Functional Close system / 폐쇄형 시스템으로 오염 원천 차단, Patented Latham Bowl Design / 특허된 레이섬 볼 구조로 세포 품질 유지, Precision collection / 스마트 센서로 5분 내 정밀 수집 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
   2. Phoenix (`#phoenix`): 이미지 왼쪽 / 텍스트 오른쪽. 설명: 카탈로그 원문 문장(Phoenix는 원클릭 자동화 시스템으로 …). 특징 4개 — 안전성·효율성·정밀함·편의성 (국문 카탈로그 원문과 대조해 "인한", "압도적" 누락 보완 완료). 이미지: PRP·PPP 주사기 사진(`img/feature-phoenix-prp.png`, Phoenix 영문 브로셔에서 추출, 해상도 낮음)
   3. 파란 영역(`.band`, rgb(0,99,242)): 참고 사이트의 Experiences 자리. 내용 없이 색만 — 추후 상의
+  - 특징 항목 정렬: 제목 줄 수가 달라도 설명이 같은 높이에서 시작(li subgrid, 사용자 선택)
+  - 이미지 표시 크기(1920 화면): Rhea 739×416(16:9, 화면 오른쪽 끝까지) / Phoenix 554×677(393:480). 교체용 권장 원본: Rhea 1600×900 이상, Phoenix 1200×1466 이상(선명도 위해 표시 크기의 2배)
   - 특징 항목: 참고 사이트와 같게 제목 + 회색 ↗ 화살표 + 회색 설명 (작은 파란 라벨 없음). 화살표는 현재 장식용(링크 없음 — 상세 페이지 생기면 연결)
   - 인터랙션 (u2clab.com Service 섹션 코드 확인 후 동일 적용)
     - 스크롤 등장: fadeInUp(아래 100px→제자리, 1초, 이미지 1.8초), 한 번만. 지연: Features 0 / 제목 .3s / 설명 .5s / 항목 .4s~ / 이미지 0
