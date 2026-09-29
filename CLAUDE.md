@@ -56,10 +56,10 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   - Nav: About Us / Rhea / Phoenix / Contact Us (서브메뉴 없음 — 사용자 요청으로 삭제)
   - 모바일(1023px 이하): 햄버거 메뉴
 - Hero: 전체 화면형 — 헤더 + 히어로 = 화면 높이 100vh (첫 화면에 히어로만 보임, 모바일 포함)
-- Hero 슬라이더: 3장 페이드 슬라이더(5초 자동재생, 왼쪽 세로 인디케이터 + 일시정지)
-  1. Rhea+Phoenix 함께 있는 이미지 — "정밀한 농축, 신뢰할 수 있는 결과"
-  2. Rhea — "Rhea / 폐쇄형 백 농축 시스템"
-  3. Phoenix — "Phoenix / 시린지 농축 시스템"
+- Hero 슬라이더: 2장 페이드 슬라이더(5초 자동재생, 왼쪽 세로 인디케이터 + 일시정지)
+  1. Rhea — "Rhea / 폐쇄형 백 농축 시스템"
+  2. Phoenix — "Phoenix / 시린지 농축 시스템"
+  - Rhea+Phoenix 함께 있는 슬라이드는 사용자 요청으로 삭제 (원본 `img/hero-rhea-phoenix-*.png`는 남겨둠)
 - Features 섹션 (참고: u2clab.com 의 Service 섹션 레이아웃, "Service" → "Features", 파랑 rgb(0,99,242))
   1. Rhea (`#rhea`): 텍스트 왼쪽 / 이미지 오른쪽(화면 오른쪽 끝까지). 특징 3개 — 폐쇄형 시스템, 특허 레이섬 볼 구조, 스마트 센서 정밀 수집. 이미지: Rhea 일회용 키트(`img/feature-rhea-kit.jpg`)
   2. Phoenix (`#phoenix`): 이미지 왼쪽 / 텍스트 오른쪽. 특징 4개 — 안전성·효율성·정밀함·편의성 (Phoenix 카탈로그 문구). 이미지: PRP·PPP 주사기 사진(`img/feature-phoenix-prp.png`, Phoenix 영문 브로셔에서 추출, 해상도 낮음)
@@ -76,6 +76,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: 히어로 전체 화면형(100vh) 적용
 - 완료: 콘텐츠 너비 레이아웃 적용 — 헤더 1792px, 히어로 1440px
 - 완료: 히어로 제품 이미지 교체 (사용자 제공 img/ → img/web/ webp, PC 3장 + 모바일 3장)
+- 완료: 히어로에서 Rhea+Phoenix 슬라이드 삭제 → 제품별 2장만
 - 완료: Features 섹션(Rhea / Phoenix) + 파란 영역(색만)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
