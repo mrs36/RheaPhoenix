@@ -106,7 +106,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
 - 완료: 히어로에서 Rhea+Phoenix 슬라이드 삭제 → 제품별 2장만
 - 완료: Features 섹션(Rhea / Phoenix) + 파란 영역(색만)
 - 완료: Features 섹션 인터랙션(스크롤 등장, 화살표 hover) — 참고 사이트 코드 기준. View More 포인터는 삭제
-- 완료: Rhea 히어로 이미지 교체 (사용자가 새로 올린 img/hero-rhea-{pc,mo}.png → img/web/ webp, PC 1352×1288 / 모바일 730×732)
+- 완료: Rhea 히어로 이미지 교체 (사용자가 새로 올린 img/hero-rhea-{pc,mo}.png → img/web/ webp, PC 1352×1407 / 모바일 730×788). 원본 캔버스가 같아도 그림 영역 높이가 달라지면 자동 여백 자르기로 확대되므로, 이전 이미지와 같은 배율(같은 자르기 높이)로 맞춤)
 - 완료: 제품 핵심 문구(사용자 제공 + Rhea 카탈로그) CLAUDE.md에 저장 — 자료 파일 원본 보관 위치는 사용자와 상의 중(저장소가 Public)
 - 완료: Figma 내보내기 스킬(`figma-export`) 저장 — 링크의 Figma 파일로, 컴포넌트 적용 상태로, 컴포넌트 원본은 별도 페이지에
 - 완료: `img/` 폴더 이미지(히어로 PC/모바일, 로고, 캡쳐화면) 저장소에 업로드 — PSD는 제외, index.html에는 아직 미적용
