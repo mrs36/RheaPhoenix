@@ -239,6 +239,7 @@
   }
   .contact-form button:hover{background:#374151}
   .contact-form button:active{background:#111827}
+  .contact-cells{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
   .contact-glow{
     position:absolute;top:0;left:0;right:0;max-width:32rem;height:800px;margin:0 auto;filter:blur(118px);
     background:linear-gradient(106.89deg,rgba(192,132,252,.11) 15.73%,rgba(14,165,233,.41) 15.74%,rgba(232,121,249,.26) 56.49%,rgba(79,70,229,.4) 115.91%)
@@ -493,6 +494,7 @@
       </div>
     </div>
     <div class="contact-glow" aria-hidden="true"></div>
+    <canvas class="contact-cells" id="contactCells" aria-hidden="true"></canvas>
   </section>
 </main>
 
@@ -564,6 +566,53 @@
     });
     fx.forEach(function(el){io.observe(el)});
   }
+})();
+/* Contact 배경: 혈구 모양 원이 천천히 떠오름 */
+(function(){
+  var cv=document.getElementById('contactCells');
+  if(!cv||!cv.getContext)return;
+  var sec=cv.parentNode,ctx=cv.getContext('2d');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var W=0,H=0,cells=[],raf=0,visible=false;
+  function rnd(a,b){return a+Math.random()*(b-a)}
+  function make(initial){
+    var r=rnd(7,26);
+    return {x:rnd(0,W),y:initial?rnd(0,H):H+r*2,r:r,vy:rnd(.12,.4),amp:rnd(8,28),sp:rnd(.0004,.0012),ph:rnd(0,6.28),a:rnd(.18,.5)};
+  }
+  function size(){
+    var d=Math.min(window.devicePixelRatio||1,2);
+    W=sec.clientWidth;H=sec.clientHeight;
+    cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
+    var n=Math.round(Math.min(40,Math.max(14,W/36)));
+    cells=[];for(var i=0;i<n;i++)cells.push(make(true));
+    draw(0);
+  }
+  function draw(t){
+    ctx.clearRect(0,0,W,H);
+    cells.forEach(function(c){
+      var x=c.x+Math.sin(t*c.sp+c.ph)*c.amp;
+      var g=ctx.createRadialGradient(x,c.y,c.r*.15,x,c.y,c.r);
+      g.addColorStop(0,'rgba(120,10,25,'+(c.a*.55)+')');
+      g.addColorStop(.45,'rgba(200,25,40,'+c.a+')');
+      g.addColorStop(1,'rgba(236,34,39,'+(c.a*.75)+')');
+      ctx.beginPath();ctx.arc(x,c.y,c.r,0,6.2832);ctx.fillStyle=g;ctx.fill();
+    });
+  }
+  function step(t){
+    cells.forEach(function(c,i){
+      c.y-=c.vy;
+      if(c.y<-c.r*2)cells[i]=make(false);
+    });
+    draw(t);
+    raf=requestAnimationFrame(step);
+  }
+  function play(){if(!raf&&!reduce)raf=requestAnimationFrame(step)}
+  function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
+  size();
+  window.addEventListener('resize',size);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){es[0].isIntersecting?play():stop()}).observe(sec);
+  }else play();
 })();
 </script>
 
