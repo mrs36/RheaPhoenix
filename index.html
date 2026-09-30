@@ -267,7 +267,7 @@
   }
 
   /* ---------- Footer ---------- */
-  .site-footer{background:#1f2024;color:#8b8d93;font-size:13px;line-height:1.5}
+  .site-footer{background:#171a47;color:#8b8d93;font-size:13px;line-height:1.5}
   .f-wrap{max-width:calc(1616px + 2*var(--side));margin:0 auto;padding:48px var(--side) 80px;display:grid;grid-template-columns:189px 1fr auto;grid-template-rows:auto auto;column-gap:0;row-gap:40px;align-items:start}
   .f-logo{grid-row:1;grid-column:1;align-self:start;display:block;width:145px}
   .f-logo .f-logo-svg{height:auto;width:100%}
@@ -276,20 +276,14 @@
   .f-info p{display:flex;flex-wrap:wrap;gap:4px 24px;margin:0;line-height:1.5}
   .f-info b{color:#a4a6ab;font-weight:700;margin-right:8px}
   .f-copy{grid-row:2;grid-column:2;color:#a4a6ab;font-weight:700;display:flex;align-items:center;gap:4px}
-  .f-links{grid-row:1;grid-column:3;display:flex;gap:26px;align-items:flex-start;font-size:14px}
-  .f-links a{display:inline-flex;align-items:center;gap:3px;color:#8b8d93;transition:color .3s}
-  .f-links a.strong{color:#fff;font-weight:700}
-  .f-links a:hover{color:#fff}
-  .f-ext{width:14px;height:14px}
   .f-family{grid-row:2;grid-column:3;position:relative;width:180px;justify-self:end}
   .f-family select{appearance:none;-webkit-appearance:none;width:100%;height:36px;padding:0 40px 0 13px;background:#33353b;color:#fff;border:0;border-radius:2px;font:inherit;font-size:15px;cursor:pointer}
   .f-family::after{content:"";position:absolute;right:16px;top:12px;width:7px;height:7px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg);pointer-events:none}
   @media (max-width:1023px){
     .f-wrap{grid-template-columns:1fr;grid-template-rows:auto;padding:40px var(--side) 56px;row-gap:24px}
-    .f-logo,.f-info,.f-copy,.f-links,.f-family{grid-column:1;grid-row:auto}
+    .f-logo,.f-info,.f-copy,.f-family{grid-column:1;grid-row:auto}
     .f-logo{width:120px}
-    .f-links{order:2;flex-wrap:wrap}
-    .f-family{justify-self:start;order:4;width:100%}
+        .f-family{justify-self:start;order:4;width:100%}
     .f-copy{order:3}
   }
   @media (prefers-reduced-motion:reduce){
@@ -431,8 +425,7 @@
       <p><span><b>TEL</b>: +82-31-360-0030</span><span><b>FAX</b>: +82-31-8069-7441</span><span><b>E-mail</b>: mrs@mrso.co.kr</span></p>
     </div>
     <div class="f-copy">Copyright 2026 엠알솔루션 All Rights Reserved.</div>
-    <div class="f-links"><a class="strong" href="#">개인정보처리방침<svg class="f-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></a><a href="#">이용약관<svg class="f-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></a><a href="#">공지사항<svg class="f-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></a></div>
-    <div class="f-family"><select aria-label="Family Site" onchange="if(this.value){window.open(this.value,'_blank','noopener');this.selectedIndex=0}"><option value="">Family Site</option><option value="https://mrso.co.kr/">엠알솔루션</option></select></div>
+    <div class="f-family"><select aria-label="Family Site" onchange="if(this.value){window.open(this.value,'_blank','noopener');this.selectedIndex=0}"><option value="">Family Site</option><option value="https://mrso.co.kr/">(주)엠알솔루션</option></select></div>
   </div>
 </footer>
 
