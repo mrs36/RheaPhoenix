@@ -567,7 +567,7 @@
     fx.forEach(function(el){io.observe(el)});
   }
 })();
-/* Contact 배경: 혈구 모양 원이 천천히 떠오름 */
+/* Contact 배경: 혈구 모양 흰색 원이 천천히 떠오름 */
 (function(){
   var cv=document.getElementById('contactCells');
   if(!cv||!cv.getContext)return;
@@ -592,9 +592,9 @@
     cells.forEach(function(c){
       var x=c.x+Math.sin(t*c.sp+c.ph)*c.amp;
       var g=ctx.createRadialGradient(x,c.y,c.r*.15,x,c.y,c.r);
-      g.addColorStop(0,'rgba(120,10,25,'+(c.a*.55)+')');
-      g.addColorStop(.45,'rgba(200,25,40,'+c.a+')');
-      g.addColorStop(1,'rgba(236,34,39,'+(c.a*.75)+')');
+      g.addColorStop(0,'rgba(255,255,255,'+(c.a*.3)+')');
+      g.addColorStop(.45,'rgba(255,255,255,'+c.a+')');
+      g.addColorStop(1,'rgba(255,255,255,'+(c.a*.75)+')');
       ctx.beginPath();ctx.arc(x,c.y,c.r,0,6.2832);ctx.fillStyle=g;ctx.fill();
     });
   }
