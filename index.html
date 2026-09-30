@@ -265,6 +265,33 @@
   @media (max-width:560px){
     .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:1fr}
   }
+
+  /* ---------- Footer ---------- */
+  .site-footer{background:#1f2024;color:#8b8d93;font-size:13px;line-height:1.5}
+  .f-wrap{max-width:calc(1616px + 2*var(--side));margin:0 auto;padding:48px var(--side) 80px;display:grid;grid-template-columns:189px 1fr auto;grid-template-rows:auto auto;column-gap:0;row-gap:40px;align-items:start}
+  .f-logo{grid-row:1;grid-column:1;align-self:start;display:block;width:145px}
+  .f-logo .f-logo-svg{height:auto;width:100%}
+  .f-logo g{fill:#fff}
+  .f-info{grid-row:1;grid-column:2;display:flex;flex-direction:column;gap:6px}
+  .f-info p{display:flex;flex-wrap:wrap;gap:4px 24px;margin:0;line-height:1.5}
+  .f-info b{color:#a4a6ab;font-weight:700;margin-right:8px}
+  .f-copy{grid-row:2;grid-column:2;color:#a4a6ab;font-weight:700;display:flex;align-items:center;gap:4px}
+  .f-links{grid-row:1;grid-column:3;display:flex;gap:26px;align-items:flex-start;font-size:14px}
+  .f-links a{display:inline-flex;align-items:center;gap:3px;color:#8b8d93;transition:color .3s}
+  .f-links a.strong{color:#fff;font-weight:700}
+  .f-links a:hover{color:#fff}
+  .f-ext{width:14px;height:14px}
+  .f-family{grid-row:2;grid-column:3;position:relative;width:180px;justify-self:end}
+  .f-family select{appearance:none;-webkit-appearance:none;width:100%;height:36px;padding:0 40px 0 13px;background:#33353b;color:#fff;border:0;border-radius:2px;font:inherit;font-size:15px;cursor:pointer}
+  .f-family::after{content:"";position:absolute;right:16px;top:12px;width:7px;height:7px;border-right:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(45deg);pointer-events:none}
+  @media (max-width:1023px){
+    .f-wrap{grid-template-columns:1fr;grid-template-rows:auto;padding:40px var(--side) 56px;row-gap:24px}
+    .f-logo,.f-info,.f-copy,.f-links,.f-family{grid-column:1;grid-row:auto}
+    .f-logo{width:120px}
+    .f-links{order:2;flex-wrap:wrap}
+    .f-family{justify-self:start;order:4;width:100%}
+    .f-copy{order:3}
+  }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
   }
@@ -395,6 +422,19 @@
 
   <section class="band" aria-label="추가 콘텐츠 영역"></section>
 </main>
+
+<footer class="site-footer">
+  <div class="f-wrap">
+    <a href="#top" class="f-logo" aria-label="MR Solution 홈"><svg class="logo-svg f-logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.17 31.18" role="img" aria-hidden="true"><g fill="#171b46"><polygon points="21.85 0 13.28 10.65 4.7 0 .48 0 .48 22.53 4.38 22.53 4.38 6.44 13.15 16.99 13.28 16.99 22.11 6.37 22.11 22.53 26.07 22.53 26.07 0 21.85 0"/><path d="M41.67,14.08c3.14-.83,5.25-3.2,5.25-6.9v-.06c0-1.96-.68-3.64-1.87-4.86C43.6.84,41.38,0,38.55,0h-10.54v3.6h9.35c2.93,0,5.53.52,5.53,3.33v.47c.05,2.67-2.66,3.77-5.5,3.77h-5.79v3.51h0l10.03,7.79h6.36s-10.1-7.83-10.1-7.83c1.91-.16,2.82-.31,3.76-.55"/><path d="M52.7,5.38h-4.07C49.09,2.39,51.63.08,54.74,0,54.79,0,54.85,0,54.9,0h15.3l-1.52,2.17-1.23,1.78h-12.55c-.98,0-1.83.59-2.2,1.43"/><path d="M68.75,16.59c-.38,1.1-1.4,1.89-2.61,1.95-.04,0-.09,0-.15,0h-14.11l-1.73,2.47-1.03,1.46h16.87s0,0,0,0c2.74,0,5.1-1.62,6.2-3.94.29-.6.48-1.26.58-1.95h-4.03Z"/><path d="M3.85,31.14l-.57-2.09-.84,1.93c-.06.13-.14.2-.27.2s-.21-.07-.26-.2l-.84-1.93-.57,2.09h-.51l.76-2.79c.04-.14.12-.21.26-.21.11,0,.21.06.26.18l.91,2.1.91-2.1c.05-.12.14-.18.25-.18.13,0,.21.07.25.21l.76,2.79h-.51Z"/><path d="M4.75,31.14v-2.97h2.65v.52h-2.14v1.93h2.14v.52h-2.65ZM5.64,29.41h1.64v.44h-1.64v-.44Z"/><path d="M7.89,31.14v-2.97h1.72c.84,0,1.44.59,1.44,1.45s-.61,1.51-1.44,1.51h-1.72ZM9.61,30.62c.53,0,.93-.41.93-.97s-.39-.96-.93-.96h-1.2v1.93h1.2Z"/><rect x="11.55" y="28.17" width=".52" height="2.97"/><path d="M14,31.14c-.83,0-1.44-.65-1.44-1.51s.61-1.45,1.44-1.45h1.61v.52h-1.61c-.53,0-.92.39-.92.96s.39.97.92.97h1.61v.52h-1.61Z"/><path d="M19.17,31.14l-.44-.75h-1.4l.24-.42h.91l-.66-1.11-1.35,2.28h-.59l1.7-2.84c.06-.1.14-.17.25-.17s.19.07.25.17l1.71,2.84h-.62Z"/><polygon points="20.15 31.14 20.15 28.17 20.67 28.17 20.67 30.62 22.66 30.62 22.66 31.14 20.15 31.14"/><path d="M24.32,31.14v-2.97h1.72c.84,0,1.44.59,1.44,1.45s-.61,1.51-1.44,1.51h-1.72ZM26.03,30.62c.53,0,.93-.41.93-.97s-.39-.96-.93-.96h-1.2v1.93h1.2Z"/><path d="M27.94,31.14v-2.97h2.65v.52h-2.13v1.93h2.14v.52h-2.65ZM28.84,29.41h1.64v.44h-1.64v-.44Z"/><path d="M30.88,28.17h.63l1.34,2.29,1.34-2.29h.6l-1.71,2.84c-.06.1-.14.17-.25.17-.11,0-.19-.07-.25-.17l-1.7-2.84Z"/><rect x="35.19" y="28.17" width=".52" height="2.97"/><path d="M37.65,31.14c-.83,0-1.44-.65-1.44-1.51s.61-1.45,1.44-1.45h1.61v.52h-1.61c-.53,0-.92.39-.92.96s.39.97.92.97h1.61v.52h-1.61Z"/><path d="M39.72,31.14v-2.97h2.65v.52h-2.13v1.93h2.14v.52h-2.65ZM40.61,29.41h1.64v.44h-1.64v-.44Z"/><path d="M44.1,31.14v-.52h2.22c.28,0,.43-.15.43-.39,0-.25-.15-.38-.43-.38h-1.36c-.56,0-.9-.36-.9-.85s.32-.83.91-.83h2.13v.52h-2.13c-.24,0-.38.14-.38.36s.14.36.37.36h1.36c.6,0,.92.28.92.86,0,.5-.3.87-.92.87h-2.22Z"/><path d="M49.08,31.14c-.83,0-1.44-.65-1.44-1.51s.61-1.45,1.44-1.45h.72c.86,0,1.45.59,1.45,1.45s-.61,1.51-1.45,1.51h-.72ZM49.81,30.62c.55,0,.93-.41.93-.97s-.39-.96-.93-.96h-.72c-.53,0-.92.4-.92.96s.39.97.92.97h.72Z"/><polygon points="51.72 31.14 51.72 28.17 52.24 28.17 52.24 30.62 54.23 30.62 54.23 31.14 51.72 31.14"/><path d="M57.3,28.17h.51v1.66c0,.92-.45,1.35-1.6,1.35s-1.6-.43-1.6-1.35v-1.66h.53v1.66c0,.6.26.84,1.08.84s1.08-.24,1.08-.84v-1.66Z"/><polygon points="59.27 31.14 59.27 28.69 58.14 28.69 58.14 28.17 60.91 28.17 60.91 28.69 59.78 28.69 59.78 31.14 59.27 31.14"/><rect x="61.32" y="28.17" width=".52" height="2.97"/><path d="M63.78,31.14c-.83,0-1.44-.65-1.44-1.51s.61-1.45,1.44-1.45h.72c.86,0,1.45.59,1.45,1.45s-.61,1.51-1.45,1.51h-.72ZM64.5,30.62c.55,0,.93-.41.93-.97s-.39-.96-.93-.96h-.72c-.53,0-.92.4-.92.96s.39.97.92.97h.72Z"/><path d="M66.9,28.97v2.17h-.49v-2.69c0-.19.1-.31.26-.31.08,0,.14.03.22.11l2.09,2.08v-2.17h.49v2.72c0,.2-.11.31-.26.31-.09,0-.16-.04-.24-.11l-2.08-2.1Z"/><path d="M70.02,31.14v-.52h2.22c.28,0,.43-.15.43-.39,0-.25-.15-.38-.43-.38h-1.36c-.56,0-.9-.36-.9-.85s.32-.83.91-.83h2.13v.52h-2.13c-.24,0-.38.14-.38.36s.14.36.37.36h1.36c.6,0,.92.28.92.86,0,.5-.3.87-.92.87h-2.22Z"/><path d="M3.85,31.14l-.57-2.09-.84,1.93c-.06.13-.14.2-.27.2s-.21-.07-.26-.2l-.84-1.93-.57,2.09h-.51l.76-2.79c.04-.14.12-.21.26-.21.11,0,.21.06.26.18l.91,2.1.91-2.1c.05-.12.14-.18.25-.18.13,0,.21.07.25.21l.76,2.79h-.51Z"/><path d="M4.75,31.14v-2.97h2.65v.52h-2.14v1.93h2.14v.52h-2.65ZM5.64,29.41h1.64v.44h-1.64v-.44Z"/><path d="M7.89,31.14v-2.97h1.72c.84,0,1.44.59,1.44,1.45s-.61,1.51-1.44,1.51h-1.72ZM9.61,30.62c.53,0,.93-.41.93-.97s-.39-.96-.93-.96h-1.2v1.93h1.2Z"/></g><path fill="#ec2227" d="M48.63,7.33h4.06c.36.85,1.22,1.45,2.21,1.45h11.09c1.02,0,1.99.22,2.86.63,1.47.67,2.65,1.85,3.34,3.3.28.6.47,1.25.58,1.94h-4.03c-.4-1.14-1.48-1.94-2.75-1.94h-10.93c-.05,0-.11,0-.16,0s-.11,0-.16,0c-3.1-.07-5.65-2.38-6.1-5.38"/></svg></a>
+    <div class="f-info">
+      <p><span><b>대표자</b>[입력 필요]</span><span><b>사업자 번호</b>[입력 필요]</span><span><b>개인정보책임자</b>[입력 필요]</span></p>
+      <p><span><b>대표번호</b>[입력 필요]</span><span><b>주소</b>[입력 필요]</span></p>
+    </div>
+    <div class="f-copy">ⓒ MR Solution</div>
+    <div class="f-links"><a class="strong" href="#">개인정보처리방침<svg class="f-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></a><a href="#">이용약관<svg class="f-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></a></div>
+    <div class="f-family"><select aria-label="Family Site"><option>Family Site</option></select></div>
+  </div>
+</footer>
 
 <script>
 (function(){
