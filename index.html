@@ -210,8 +210,49 @@
     .f-items li:hover .f-arr{color:#000;transform:translate(3px,-3px)}
   }
 
-  /* 파란 영역 (내용은 추후) */
-  .band{background:var(--feat-blue);min-height:clamp(480px,63vw,1200px)}
+  /* ---------- Contact (Get in touch) ---------- */
+  .contact{position:relative;overflow:hidden;padding:7rem 0;background:#111827;scroll-margin-top:var(--header-h)}
+  .contact *,.contact *::before,.contact *::after{box-sizing:border-box}
+  .contact-in{position:relative;z-index:10;max-width:1280px;margin:0 auto;color:#4b5563}
+  .contact-head{max-width:32rem;padding:0 1rem;display:flex;flex-direction:column;gap:.75rem}
+  .contact-head h3{margin:0;color:#22d3ee;font-weight:600;font-size:16px}
+  .contact-head .c-tit{margin:0;color:#fff;font-size:1.875rem;line-height:2.25rem;font-weight:600}
+  .contact-head .c-sub{margin:0;color:#d1d5db}
+  .contact-card{margin:3rem auto 0;padding:2rem 1rem;background:#fff}
+  .contact-form{display:flex;flex-direction:column;gap:1.25rem}
+  .contact-form label{display:block;font-weight:500}
+  .contact-form input,.contact-form textarea,.contact-form select{font:inherit}
+  .contact-form input,.contact-form textarea{
+    display:block;width:100%;margin-top:.5rem;padding:.5rem .75rem;color:#6b7280;background:transparent;
+    outline:none;border:1px solid #e5e7eb;border-radius:.5rem;box-shadow:0 1px 2px rgba(0,0,0,.05);
+  }
+  .contact-form input:focus,.contact-form textarea:focus{border-color:#1f2937}
+  .contact-form textarea{height:9rem;resize:none;-webkit-appearance:none;appearance:none}
+  .c-phone{position:relative;margin-top:.5rem}
+  .c-phone .c-cc{position:absolute;top:0;bottom:0;left:.75rem;margin:auto 0;height:1.5rem;display:flex;align-items:center;padding-right:.5rem;border-right:1px solid #e5e7eb}
+  .c-phone select{height:100%;font-size:14px;background:transparent;outline:none;border:0;border-radius:.5rem}
+  .c-phone input{margin-top:0;padding-left:4.5rem;-moz-appearance:textfield;appearance:none}
+  .c-phone input::-webkit-outer-spin-button,.c-phone input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .contact-form button{
+    width:100%;padding:.5rem 1rem;font:inherit;font-weight:500;color:#fff;background:#1f2937;border:0;border-radius:.5rem;
+    cursor:pointer;transition-duration:.15s;transition-property:background-color
+  }
+  .contact-form button:hover{background:#374151}
+  .contact-form button:active{background:#111827}
+  .contact-glow{
+    position:absolute;top:0;left:0;right:0;max-width:32rem;height:800px;margin:0 auto;filter:blur(118px);
+    background:linear-gradient(106.89deg,rgba(192,132,252,.11) 15.73%,rgba(14,165,233,.41) 15.74%,rgba(232,121,249,.26) 56.49%,rgba(79,70,229,.4) 115.91%)
+  }
+  @media (min-width:640px){
+    .contact-in{padding:0 1rem}
+    .contact-head{margin:0 auto;padding:0;text-align:center}
+    .contact-head .c-tit{font-size:2.25rem;line-height:2.5rem}
+    .contact-card{max-width:32rem;padding:2rem;border-radius:.75rem}
+    .contact-glow{max-width:48rem;height:400px}
+  }
+  @media (min-width:768px){
+    .contact-in{padding:0 2rem}
+  }
 
   /* ---------- Mobile nav ---------- */
   .m-nav{
@@ -260,7 +301,6 @@
     .feat-phoenix .f-pic{order:2;aspect-ratio:4/3}
     .feat-phoenix .f-text{order:1;padding:0}
     .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 20px}
-    .band{min-height:420px}
   }
   @media (max-width:560px){
     .feat-rhea .f-items,.feat-phoenix .f-items{grid-template-columns:1fr}
@@ -414,7 +454,46 @@
     </div>
   </section>
 
-  <section class="band" aria-label="추가 콘텐츠 영역"></section>
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <div class="contact-head">
+        <h3>Contact</h3>
+        <p class="c-tit">Get in touch</p>
+        <p class="c-sub">We’d love to hear from you! Please fill out the form bellow.</p>
+      </div>
+      <div class="contact-card">
+        <form class="contact-form" onsubmit="return false">
+          <div>
+            <label for="c-name">Full name</label>
+            <input id="c-name" type="text" required>
+          </div>
+          <div>
+            <label for="c-email">Email</label>
+            <input id="c-email" type="email" required>
+          </div>
+          <div>
+            <label for="c-phone">Phone number</label>
+            <div class="c-phone">
+              <div class="c-cc">
+                <select aria-label="Country">
+                  <option>US</option>
+                  <option>ES</option>
+                  <option>MR</option>
+                </select>
+              </div>
+              <input id="c-phone" type="number" placeholder="+1 (555) 000-000" required>
+            </div>
+          </div>
+          <div>
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="contact-glow" aria-hidden="true"></div>
+  </section>
 </main>
 
 <footer class="site-footer">
