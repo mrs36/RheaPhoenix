@@ -85,18 +85,17 @@
   .slide.is-active{opacity:1;visibility:visible;z-index:1}
   .slide .bg{position:absolute;inset:0}
 
-  /* 히어로 배경: 어두운 남색 + 글로우 + 떠오르는 흰색 혈구 원 */
+  /* 히어로 배경: 어두운 남색 + 글로우 */
   .hero-glow{
     position:absolute;top:0;left:0;right:0;max-width:32rem;height:800px;margin:0 auto;filter:blur(118px);pointer-events:none;
     background:linear-gradient(106.89deg,rgba(192,132,252,.11) 15.73%,rgba(14,165,233,.41) 15.74%,rgba(232,121,249,.26) 56.49%,rgba(79,70,229,.4) 115.91%)
   }
-  .hero-cells{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
   @media (min-width:640px){.hero-glow{max-width:48rem;height:400px}}
 
-  /* 히어로 하단 흐르는 문구 (참고: miracell.co.kr #mainAbout marquee) — 흰색 30%, 300px, 세로 가운데, 배경 위·제품 이미지 아래 */
-  .marquee{position:absolute;left:var(--hgutter);right:var(--hgutter);top:calc(70% + 20px);transform:translateY(-50%);overflow:hidden;pointer-events:none;user-select:none}
+  /* 히어로 하단 흐르는 문구 (참고: miracell.co.kr #mainAbout marquee) — 흰색 30%, 200px, 맨 아래, 배경 위·제품 이미지 아래 */
+  .marquee{position:absolute;left:var(--hgutter);right:var(--hgutter);bottom:0;overflow:hidden;pointer-events:none;user-select:none}
   .marquee .absol{display:flex;width:max-content;animation:marquee 60s linear infinite}
-  .marquee .mar_ch{flex:none;padding-right:.35em;font-size:300px;line-height:1.25;font-weight:800;letter-spacing:-.03em;white-space:nowrap;color:rgba(255,255,255,.3)}
+  .marquee .mar_ch{flex:none;padding-right:.35em;font-size:200px;line-height:1.25;font-weight:800;letter-spacing:-.03em;white-space:nowrap;color:rgba(255,255,255,.3)}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .pic-box{position:absolute;top:0;bottom:0;left:var(--hgutter);right:var(--hgutter);overflow:hidden;z-index:1}
   .slide .pic{position:absolute;pointer-events:none;user-select:none}
@@ -123,7 +122,7 @@
   /* 제목이 길어도 한 줄 유지 — 제품 이미지는 텍스트 아래 레이어 (PC) */
   @media (min-width:1024px){.tit{white-space:nowrap}}
   .desc{
-    margin:18px 0 0;font-size:clamp(17px,1.875vw,27px);line-height:1.6;font-weight:400;color:#fff;
+    margin:18px 0 0;font-size:clamp(17px,1.875vw,27px);line-height:1.6;font-weight:400;color:#ebe9ff;
     letter-spacing:-.02em;
   }
   .fade-up{transform:translateY(40px);opacity:.001}
@@ -134,12 +133,27 @@
   @keyframes fadeUp{to{transform:none;opacity:1}}
 
   .more{
+    --cta-grad:linear-gradient(120deg,#3b64fc 0%,#a78bfa 50%,#ebe9ff 100%);
+    position:relative;isolation:isolate;
     display:inline-flex;align-items:center;gap:10px;margin-top:34px;
     font-size:15px;font-weight:500;color:#fff;
-    padding:12px 22px;border:1px solid rgba(255,255,255,.4);border-radius:999px;background:rgba(255,255,255,.08);
-    transition:background .25s,color .25s,border-color .25s;
+    padding:12px 22px;border-radius:999px;background:rgba(255,255,255,.06);
+    transition:background .25s,color .25s;
   }
-  .more:hover{background:#fff;border-color:#fff;color:var(--navy)}
+  /* 외곽 stroke 그라디언트 */
+  .more::before{
+    content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:var(--cta-grad);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+    mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
+    pointer-events:none;
+  }
+  /* 글로우 */
+  .more::after{
+    content:"";position:absolute;inset:-2px;border-radius:inherit;background:var(--cta-grad);
+    filter:blur(14px);opacity:.45;z-index:-1;pointer-events:none;transition:opacity .3s;
+  }
+  .more:hover{background:#fff;color:var(--navy)}
+  .more:hover::after{opacity:.8}
   .more svg{width:16px;height:16px}
 
   /* vertical pagination */
@@ -346,7 +360,6 @@
 <main id="top">
   <section class="visual" id="visual" aria-roledescription="carousel" aria-label="제품 소개">
     <div class="hero-glow" aria-hidden="true"></div>
-    <canvas class="hero-cells" id="heroCells" aria-hidden="true"></canvas>
     <div class="slide s2 is-active is-first" aria-roledescription="slide" aria-label="1 / 2">
       <div class="bg"></div>
       <div class="marquee" aria-hidden="true"><div class="absol"><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span></div></div>
@@ -487,54 +500,6 @@
     });
     fx.forEach(function(el){io.observe(el)});
   }
-})();
-/* 히어로 배경: 혈구 모양 흰색 원이 천천히 떠오름 */
-(function(){
-  var cv=document.getElementById('heroCells');
-  if(!cv||!cv.getContext)return;
-  var sec=cv.parentNode,ctx=cv.getContext('2d');
-  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
-  var W=0,H=0,cells=[],raf=0,visible=false;
-  function rnd(a,b){return a+Math.random()*(b-a)}
-  function make(initial){
-    var r=rnd(7,26);
-    return {x:rnd(0,W),y:initial?rnd(0,H):H+r*2,r:r,vy:rnd(.12,.4),amp:rnd(8,28),sp:rnd(.0004,.0012),ph:rnd(0,6.28),a:rnd(.18,.5)};
-  }
-  function size(){
-    var d=Math.min(window.devicePixelRatio||1,2);
-    W=sec.clientWidth;H=sec.clientHeight;
-    cv.width=W*d;cv.height=H*d;ctx.setTransform(d,0,0,d,0,0);
-    var n=Math.round(Math.min(40,Math.max(14,W/36)));
-    cells=[];for(var i=0;i<n;i++)cells.push(make(true));
-    draw(0);
-  }
-  function draw(t){
-    ctx.clearRect(0,0,W,H);
-    cells.forEach(function(c){
-      var x=c.x+Math.sin(t*c.sp+c.ph)*c.amp;
-      var g=ctx.createRadialGradient(x,c.y,c.r*.15,x,c.y,c.r);
-      g.addColorStop(0,'rgba(255,255,255,'+(c.a*.3)+')');
-      g.addColorStop(.45,'rgba(255,255,255,'+c.a+')');
-      g.addColorStop(1,'rgba(255,255,255,'+(c.a*.75)+')');
-      ctx.beginPath();ctx.arc(x,c.y,c.r,0,6.2832);ctx.fillStyle=g;ctx.fill();
-    });
-  }
-  function step(t){
-    cells.forEach(function(c,i){
-      c.y-=c.vy;
-      if(c.y<-c.r*2)cells[i]=make(false);
-    });
-    draw(t);
-    raf=requestAnimationFrame(step);
-  }
-  function play(){if(!raf&&!reduce)raf=requestAnimationFrame(step)}
-  function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
-  size();
-  if('ResizeObserver' in window){var ro=new ResizeObserver(function(){if(sec.clientWidth!==W||sec.clientHeight!==H)size()});ro.observe(sec)}
-  else window.addEventListener('resize',size);
-  if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){es[0].isIntersecting?play():stop()}).observe(sec);
-  }else play();
 })();
 </script>
 
