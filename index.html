@@ -175,6 +175,9 @@
   .s2 .more:hover,.s3 .more:hover{background:#f4f0ff;color:#000}
   .s2 .more svg,.s3 .more svg{width:24px;height:24px}
   @media (min-width:1024px){
+    /* Rhea 제품 이미지: 시안(1920 기준 680×753, 오른쪽 여백 97px, 위로 14px 걸침) — 콘텐츠 너비 밖까지 나오므로 pic-box를 전체 너비로 */
+    .s2 .pic-box{left:0;right:0}
+    .s2 .pic{right:calc(97 / 1920 * 100%);top:44.7%;height:auto;width:clamp(420px,35.45vw,680px);max-width:none;filter:none}
     .s3 .pic{right:calc(94 / 1440 * 100%);top:49%;height:auto;width:clamp(360px,28.3vw,544px);max-width:none;filter:none}
   }
 
@@ -388,6 +391,7 @@
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="slide s2 is-active is-first" aria-roledescription="slide" aria-label="1 / 2">
       <div class="bg"><picture><source media="(max-width:1023px)" srcset="img/web/hero-bg-mo.webp"><img src="img/web/hero-bg-pc.webp" alt="" width="2000" height="1125" fetchpriority="high" decoding="async"></picture></div>
+      <div class="pic-box"><img class="pic" src="img/web/hero-rhea-product.webp" alt="Rhea 장비" width="1360" height="1506" fetchpriority="high" decoding="async"></div>
       <div class="txt_box">
         <p class="tit fade-up"><span class="en">Rhea</span><br>자가 혈액 생리활성 분자 증강</p>
         <p class="desc fade-up">최신 혈액 원심분리 기술을 적용한 완전 자동화 시스템으로<br>고품질 BaM 생산. 자가 유래 BaM을 효과적으로 농축</p>
