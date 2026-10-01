@@ -254,6 +254,60 @@
     .f-items li:hover .f-arr{color:#000;transform:translate(3px,-3px)}
   }
 
+  /* ---------- Contact (Get in touch) ---------- */
+  .contact{position:relative;overflow:hidden;padding:7rem 0;background:#111827;scroll-margin-top:var(--header-h)}
+  .contact *,.contact *::before,.contact *::after{box-sizing:border-box}
+  .contact-in{position:relative;z-index:10;max-width:1280px;margin:0 auto;color:#4b5563}
+  .contact-head{max-width:32rem;padding:0 1rem;display:flex;flex-direction:column;gap:.75rem}
+  .contact-head h3{margin:0;color:#22d3ee;font-weight:600;font-size:16px}
+  .contact-head .c-tit{margin:0;color:#fff;font-size:1.875rem;line-height:2.25rem;font-weight:600}
+  .contact-head .c-sub{margin:0;color:#d1d5db}
+  .contact-card{margin:3rem auto 0;padding:2rem 1rem;background:#fff}
+  .contact-form{display:flex;flex-direction:column;gap:1.25rem}
+  .contact-form label{display:block;font-weight:500}
+  .contact-form input,.contact-form textarea,.contact-form select{font:inherit}
+  .contact-form input,.contact-form textarea{
+    display:block;width:100%;margin-top:.5rem;padding:.5rem .75rem;color:#6b7280;background:transparent;
+    outline:none;border:1px solid #e5e7eb;border-radius:.5rem;box-shadow:0 1px 2px rgba(0,0,0,.05);
+  }
+  .contact-form input:focus,.contact-form textarea:focus{border-color:#1f2937}
+  .contact-form textarea{height:9rem;resize:none;-webkit-appearance:none;appearance:none}
+  .c-phone{position:relative;margin-top:.5rem}
+  .c-phone .c-cc{position:absolute;top:0;bottom:0;left:.75rem;margin:auto 0;height:1.5rem;display:flex;align-items:center;padding-right:.5rem;border-right:1px solid #e5e7eb}
+  .c-phone select{height:100%;font-size:14px;background:transparent;outline:none;border:0;border-radius:.5rem}
+  .c-phone input{margin-top:0;padding-left:4.5rem;-moz-appearance:textfield;appearance:none}
+  .c-phone input::-webkit-outer-spin-button,.c-phone input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+  .contact-form button{
+    width:100%;padding:.5rem 1rem;font:inherit;font-weight:500;color:#fff;background:#1f2937;border:0;border-radius:.5rem;
+    cursor:pointer;transition-duration:.15s;transition-property:background-color
+  }
+  .contact-form button:hover{background:#374151}
+  .contact-form button:active{background:#111827}
+  .contact-glow{
+    position:absolute;top:0;left:0;right:0;max-width:32rem;height:800px;margin:0 auto;filter:blur(118px);
+    background:linear-gradient(106.89deg,rgba(192,132,252,.11) 15.73%,rgba(14,165,233,.41) 15.74%,rgba(232,121,249,.26) 56.49%,rgba(79,70,229,.4) 115.91%)
+  }
+  @media (min-width:640px){
+    .contact-in{padding:0 1rem}
+    .contact-head{margin:0 auto;padding:0;text-align:center}
+    .contact-head .c-tit{font-size:2.25rem;line-height:2.5rem}
+    .contact-card{max-width:32rem;padding:2rem;border-radius:.75rem}
+    .contact-glow{max-width:48rem;height:400px}
+  }
+  @media (min-width:768px){
+    .contact-in{padding:0 2rem}
+  }
+
+  .c-info{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;color:#d1d5db;line-height:1.6}
+  .c-info p{margin:0}
+  .c-info b{color:#fff;margin-right:.5rem}
+  .c-info a{color:inherit}
+  @media (min-width:1024px){
+    .contact-in{max-width:1440px;display:grid;grid-template-columns:1fr 32rem;gap:6rem;align-items:center;padding:0 var(--hgutter,64px)}
+    .contact-head{margin:0;max-width:none;text-align:left}
+    .contact-card{margin:0;max-width:none;width:100%}
+  }
+
   /* ---------- Mobile nav ---------- */
   .m-nav{
     position:fixed;inset:0;z-index:60;background:var(--paper);
@@ -454,6 +508,53 @@
         <li class="fx" style="--d:.8s"><h3>자동화 고농축 시스템<svg class="f-arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="square" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg></h3><p>원클릭으로 고농축 PRP와 PPP를<br>자동으로 동시 추출</p></li>
       </ul>
     </div>
+  </section>
+  <section class="contact" id="contact">
+    <div class="contact-in">
+      <div class="contact-head">
+        <h3>Contact</h3>
+        <p class="c-tit">Get in touch</p>
+        <p class="c-sub">We’d love to hear from you! Please fill out the form bellow.</p>
+        <div class="c-info">
+          <p>㈜엠알솔루션</p>
+          <p>경기도 의왕시 이미로 40, D 동 1019호, 1020호 (포일동, 인덕원IT밸리)</p>
+          <p><b>TEL</b>: +82-31-360-0030</p>
+          <p><b>FAX</b>: +82-31-8069-7441</p>
+          <p><b>E-mail</b>: <a href="mailto:mrs@mrso.co.kr">mrs@mrso.co.kr</a></p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <form class="contact-form" onsubmit="return false">
+          <div>
+            <label for="c-name">Full name</label>
+            <input id="c-name" type="text" required>
+          </div>
+          <div>
+            <label for="c-email">Email</label>
+            <input id="c-email" type="email" required>
+          </div>
+          <div>
+            <label for="c-phone">Phone number</label>
+            <div class="c-phone">
+              <div class="c-cc">
+                <select aria-label="Country">
+                  <option>US</option>
+                  <option>ES</option>
+                  <option>MR</option>
+                </select>
+              </div>
+              <input id="c-phone" type="number" placeholder="+1 (555) 000-000" required>
+            </div>
+          </div>
+          <div>
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="contact-glow" aria-hidden="true"></div>
   </section>
 </main>
 
