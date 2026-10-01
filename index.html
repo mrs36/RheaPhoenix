@@ -305,6 +305,9 @@
     .contact-form textarea{height:240px}
     .c-radios{padding:0 18px;gap:8px 20px;height:auto;min-height:56px;padding-top:12px;padding-bottom:12px}
     .c-fields select{padding-left:12px!important;padding-right:28px!important;background-position:right 10px center}
+    .c-mail{flex-wrap:wrap}
+    .c-mail input{flex:1 1 0;width:auto}
+    .c-mail select{flex:1 0 100%;width:100%}
     .c-agree{flex-wrap:wrap}
     .c-btns button{flex:1;width:auto}
   }
@@ -531,7 +534,7 @@
             <span class="c-sep">-</span><input type="tel" inputmode="numeric" maxlength="4" aria-label="휴대전화 끝자리" required>
           </div></div>
         <div class="c-row"><label for="c-mail1">이메일<span class="req">*</span></label>
-          <div class="c-fields">
+          <div class="c-fields c-mail">
             <input id="c-mail1" type="text" aria-label="이메일 아이디" required>
             <span class="c-sep">@</span><input type="text" aria-label="이메일 도메인" required>
             <select aria-label="이메일 도메인 선택"><option>직접입력</option></select>
