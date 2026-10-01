@@ -156,6 +156,24 @@
   .more:hover::after{opacity:.8}
   .more svg{width:16px;height:16px}
 
+
+  /* Phoenix 슬라이드 (Figma 시안 2:4) — 혈구 배경 이미지, 빨강 제목, 흰 버튼 */
+  .s3 .bg img{width:100%;height:100%;object-fit:cover;display:block}
+  .s3 .tit{font-size:clamp(44px,3.9vw,75px);font-weight:800;line-height:normal}
+  .s3 .tit .en{color:#f00;letter-spacing:-.035em}
+  .s3 .desc{font-size:clamp(17px,1.3vw,25px);line-height:1.6;font-weight:500;color:#f4d9d7;margin-top:clamp(24px,2.1vw,40px)}
+  .s3 .more{
+    margin-top:clamp(28px,2.5vw,48px);padding:12px 20px;border-radius:8px;gap:8px;
+    background:#fff;color:#000;border:1px solid #7f56d9;box-shadow:0 1px 2px rgba(0,0,0,.05);
+    font-size:16px;font-weight:600;line-height:24px;
+  }
+  .s3 .more::before,.s3 .more::after{display:none}
+  .s3 .more:hover{background:#f4f0ff;color:#000}
+  .s3 .more svg{width:24px;height:24px}
+  @media (min-width:1024px){
+    .s3 .pic{right:calc(94 / 1440 * 100%);top:49%;height:auto;width:clamp(360px,28.3vw,544px);max-width:none;filter:none}
+  }
+
   /* vertical pagination */
   .ctrl{
     position:absolute;left:calc(var(--gutter) - 21px);top:50%;transform:translateY(-50%);z-index:5;
@@ -266,6 +284,9 @@
     .txt_box{order:1}.slide .pic{order:2}
     .slide .pic{position:relative;right:auto;top:auto;transform:none!important;margin:auto;display:block}
     .s2 .pic,.s3 .pic{height:auto;width:min(86%,460px);max-width:none}
+    .s3 .tit{font-size:clamp(32px,8.6vw,48px)}
+    .s3 .desc{font-size:16px;margin-top:12px}
+    .s3 .more{margin-top:22px;padding:10px 16px;font-size:14px}
     .ctrl{left:24px;right:auto;top:auto;bottom:24px;transform:none;flex-direction:row}
     .bullets{flex-direction:row}
     .scroll-cue{display:none}
@@ -373,14 +394,13 @@
     </div>
 
     <div class="slide s3" aria-roledescription="slide" aria-label="2 / 2">
-      <div class="bg"></div>
-      <div class="marquee" aria-hidden="true"><div class="absol"><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span><span class="mar_ch">Autologous BaM(Bio-active Molecules) Enrich System</span></div></div>
-      <div class="pic-box"><picture><source media="(max-width:1023px)" srcset="img/web/hero-phoenix-mo.webp"><img class="pic" src="img/web/hero-phoenix-pc.webp" alt="Phoenix 장비" width="1224" height="1042" decoding="async"></picture></div>
+      <div class="bg"><picture><source media="(max-width:1023px)" srcset="img/web/hero-bg-mo.webp"><img src="img/web/hero-bg-pc.webp" alt="" width="2000" height="1125" decoding="async"></picture></div>
+      <div class="pic-box"><img class="pic" src="img/web/hero-phoenix-product.webp" alt="Phoenix 장비" width="544" height="498" decoding="async"></div>
       <div class="txt_box">
         <p class="tit fade-up"><span class="en">Phoenix</span><br>BaM 제조 시스템</p>
         <p class="desc fade-up">원클릭 자동화 시스템으로 BaM(생리활성분자),<br>고품질 혈소판을 효율적으로 생성합니다.</p>
-        <a class="more fade-up" href="#phoenix">Phoenix 자세히 보기
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="more fade-up" href="#phoenix">자세히 보기
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
 
