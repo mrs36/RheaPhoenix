@@ -159,6 +159,10 @@
 
   /* Phoenix 슬라이드 (Figma 시안 2:4) — 혈구 배경 이미지, 빨강 제목, 흰 버튼 */
   .s3 .bg img{width:100%;height:100%;object-fit:cover;display:block}
+  /* 배경 천천히 줌인 — 슬라이드가 켜질 때 시작, 페이드아웃이 끝난 뒤 원래 크기로 복귀 */
+  .s3 .bg{overflow:hidden}
+  .s3 .bg img{transform:scale(1);transition:transform 0s 1s}
+  .s3.is-active .bg img{transform:scale(1.12);transition:transform 8s ease-out}
   .s3 .tit{font-size:clamp(44px,3.9vw,75px);font-weight:800;line-height:normal}
   .s3 .tit .en{color:#f00;letter-spacing:-.035em}
   .s3 .desc{font-size:clamp(17px,1.3vw,25px);line-height:1.6;font-weight:500;color:#f4d9d7;margin-top:clamp(24px,2.1vw,40px)}
@@ -325,6 +329,7 @@
   }
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    .s3.is-active .bg img{transform:none}
   }
 </style>
 
