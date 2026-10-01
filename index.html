@@ -313,8 +313,8 @@
   /* ---------- Footer ---------- */
   .site-footer{background:#171a47;color:#8b8d93;font-size:13px;line-height:1.5}
   .f-wrap{max-width:calc(1616px + 2*var(--side));margin:0 auto;padding:48px var(--side) 80px;display:grid;grid-template-columns:189px 1fr auto;grid-template-rows:auto auto;column-gap:0;row-gap:40px;align-items:start}
-  .f-logo{grid-row:1;grid-column:1;align-self:start;display:block;width:145px}
-  .f-logo .f-logo-svg{height:auto;width:100%}
+  .f-logo{grid-row:1;grid-column:1;align-self:start;display:block;width:auto;justify-self:start}
+  .f-logo .f-logo-svg{height:50px;width:auto}
   .f-logo g{fill:#fff}
   .f-info{grid-row:1;grid-column:2;display:flex;flex-direction:column;gap:6px}
   .f-info p{display:flex;flex-wrap:wrap;gap:4px 24px;margin:0;line-height:1.5}
@@ -326,7 +326,6 @@
   @media (max-width:1023px){
     .f-wrap{grid-template-columns:1fr;grid-template-rows:auto;padding:40px var(--side) 56px;row-gap:24px}
     .f-logo,.f-info,.f-copy,.f-family{grid-column:1;grid-row:auto}
-    .f-logo{width:120px}
         .f-family{justify-self:start;order:4;width:100%}
     .f-copy{order:3}
   }
