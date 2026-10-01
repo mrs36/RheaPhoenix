@@ -80,7 +80,7 @@ MR Solution(엠알솔루션)의 의료기기 **Rhea**, **Phoenix**를 의료업�
   - 인증서 유효기간 지남(허가증 2024-11, 특허 2024-10, GMP 2021-10) → 사이트 게재 전 갱신본 확인 필요
   - 파일 목록: Rhea_catalog_ver1.pdf, Rhea_DM-Ophthalmology_eng.pdf, Phoenix_catalog.pdf(국문), PhoenixDM2_EN.pdf(영문 브로셔), Q_A.pptx
 - 색(사용자 요청으로 구글 드라이브 브랜드 색 적용): 본문 #211e21, 제목·특징 제목 네이비 #171b46, 강조색(primary) #ff0000 — 사용자 요청으로 #3b64fc에서 변경(nav 메뉴 hover·밑줄, 모바일 메뉴 hover, 포커스 링, Features 라벨 변수 `--accent`·`--feat-blue`), 레드 #ec2227. 히어로 글씨는 흰색. 회색 설명문(#6b7084)은 그대로. 푸터는 기존 유지
-- 폰트: 영문은 Outfit(Google Fonts, 400~800 가변, 사용자 요청 2026-10-01) 우선 → 한글은 Pretendard Variable(웹폰트, jsDelivr CDN에서 불러옴 — 사용자 요청) → Noto Sans KR(Google Fonts, 대체용). 굵기 값은 기존 그대로(헤더 메뉴 500 등)
+- 폰트: Outfit 적용은 사용자 요청으로 취소(2026-10-01) — 원래대로 Pretendard Variable(웹폰트, jsDelivr CDN에서 불러옴 — 사용자 요청) → Noto Sans KR(Google Fonts, 대체용). 굵기 값은 기존 그대로(헤더 메뉴 500 등)
 
 ## 제품 핵심 문구 (사용자 제공 — 사이트 문구는 여기 기준으로 작성)
 
