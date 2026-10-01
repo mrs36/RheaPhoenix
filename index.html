@@ -287,9 +287,6 @@
   .c-radios label{display:inline-flex;align-items:center;gap:8px;font-size:18px;font-weight:500;letter-spacing:-.05em;cursor:pointer}
   .c-radios input{accent-color:var(--accent);width:18px;height:18px;margin:0}
   .c-note{margin:10px 0 0;font-size:14px;font-weight:500;letter-spacing:-.05em;color:#888}
-  .c-code{display:flex;align-items:center;width:100%;height:65px;padding-right:30px;background:#f5f5f5;border-radius:5px}
-  .c-code input{flex:1;background:transparent!important}
-  .c-code b{flex:0 0 auto;font-size:18px;letter-spacing:-.05em;color:#111}
   .c-agree{margin-top:20px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
   .c-agree label{display:inline-flex;align-items:center;gap:10px;font-size:18px;font-weight:500;color:#222;cursor:pointer}
   .c-agree input{accent-color:var(--accent);width:22px;height:22px;margin:0}
@@ -297,7 +294,6 @@
   .c-btns{display:flex;justify-content:center;gap:10px;padding-top:50px}
   .c-btns button{width:215px;height:60px;font:inherit;font-size:18px;font-weight:700;letter-spacing:-.02em;color:#fff;border:0;border-radius:5px;cursor:pointer;transition:opacity .2s}
   .c-btns button:hover{opacity:.85}
-  .c-btns .c-list{background:#000}
   .c-btns .c-send{background:var(--accent)}
   @media (max-width:1023px){
     .contact-in{grid-template-columns:1fr;gap:36px}
@@ -305,7 +301,7 @@
     .c-row{grid-template-columns:1fr;gap:8px;padding:12px 0}
     .c-row.c-tall>label{padding-top:0}
     .c-w-460{max-width:none}
-    .contact-form input[type=text],.contact-form input[type=email],.contact-form input[type=tel],.contact-form input[type=password],.contact-form select,.contact-form textarea,.c-radios,.c-code{height:56px}
+    .contact-form input[type=text],.contact-form input[type=email],.contact-form input[type=tel],.contact-form input[type=password],.contact-form select,.contact-form textarea,.c-radios{height:56px}
     .contact-form input[type=text],.contact-form input[type=email],.contact-form input[type=tel],.contact-form input[type=password],.contact-form select,.contact-form textarea{padding-left:18px;padding-right:18px}
     .contact-form textarea{height:240px}
     .c-radios{padding:0 18px;gap:8px 20px;height:auto;min-height:56px;padding-top:12px;padding-bottom:12px}
@@ -554,14 +550,11 @@
         <div class="c-row c-tall"><label for="c-pw">패스워드<span class="req">*</span></label>
           <div><input id="c-pw" type="password" inputmode="numeric" maxlength="6" required>
           <p class="c-note">※고객 정보 보호를 위하여 게시물 비밀번호 숫자 6자리를 입력하여 주세요.</p></div></div>
-        <div class="c-row"><label for="c-sec">보안코드<span class="req">*</span></label>
-          <div class="c-code"><input id="c-sec" type="text" required><b>KERHEW</b></div></div>
         <div class="c-agree">
           <label><input type="checkbox" required>개인정보처리방침에 동의합니다.</label>
           <button type="button" class="c-view">내용 보기</button>
         </div>
         <div class="c-btns">
-          <button type="button" class="c-list">문의 리스트</button>
           <button type="submit" class="c-send">문의하기</button>
         </div>
       </form>
