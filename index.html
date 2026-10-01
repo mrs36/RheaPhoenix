@@ -278,21 +278,22 @@
     .gnb{display:none}
     .util{width:auto}
     .menu-btn{display:grid}
-    .visual{height:auto;min-height:calc(100svh - var(--header-h) - env(safe-area-inset-top,0px));aspect-ratio:auto}
-    .slide{display:flex;flex-direction:column;min-height:inherit;padding-bottom:64px}
-    .slide:not(.is-active){position:absolute}
-    .slide.is-active{position:relative}
-    .txt_box{position:relative;left:auto;right:auto;top:auto;transform:none;padding:56px 24px 16px}
-    .pic-box,.pic-box picture{display:contents}
-    .tit{font-size:clamp(32px,8.6vw,48px)}
-    .desc{font-size:16px;margin-top:12px}
-    .more{margin-top:22px;padding:10px 18px;font-size:14px}
-    .txt_box{order:1}.slide .pic{order:2}
-    .slide .pic{position:relative;right:auto;top:auto;transform:none!important;margin:auto;display:block}
-    .s2 .pic,.s3 .pic{height:auto;width:min(86%,460px);max-width:none}
-    .s2 .tit,.s3 .tit{font-size:clamp(32px,8.6vw,48px)}
-    .s2 .desc,.s3 .desc{font-size:16px;margin-top:12px}
-    .s2 .more,.s3 .more{margin-top:22px;padding:10px 16px;font-size:14px}
+    /* 모바일 히어로: 한 화면(100svh − 헤더)에 모두 들어오게, 배경 > 제품 > 텍스트 순으로 겹침 */
+    .visual{height:calc(100svh - var(--header-h) - env(safe-area-inset-top,0px));min-height:500px;aspect-ratio:auto}
+    .slide,.slide:not(.is-active),.slide.is-active{position:absolute;inset:0;display:block;min-height:0;padding:0}
+    .pic-box{position:absolute;inset:0;left:0;right:0;display:block;overflow:hidden;z-index:1}
+    .pic-box picture{display:contents}
+    .txt_box{position:absolute;left:0;right:0;top:0;transform:none;padding:28px 24px 0;z-index:2}
+    .tit{font-size:clamp(30px,8.2vw,46px)}
+    .desc{font-size:15px;margin-top:12px}
+    .desc br{display:none}
+    .more{margin-top:20px;padding:10px 18px;font-size:14px}
+    .slide .pic{position:absolute;left:auto;top:auto;bottom:60px;right:4%;transform:none!important;margin:0;display:block;height:auto;max-width:none;max-height:50%;object-fit:contain;object-position:right bottom}
+    .s2 .pic{width:min(84%,340px,44svh)}
+    .s3 .pic{width:min(66%,280px,38svh)}
+    .s2 .tit,.s3 .tit{font-size:clamp(30px,8.2vw,46px)}
+    .s2 .desc,.s3 .desc{font-size:15px;margin-top:12px}
+    .s2 .more,.s3 .more{margin-top:20px;padding:10px 16px;font-size:14px}
     .ctrl{left:24px;right:auto;top:auto;bottom:24px;transform:none;flex-direction:row}
     .bullets{flex-direction:row}
     .scroll-cue{display:none}
